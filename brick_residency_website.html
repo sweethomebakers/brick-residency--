@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Brick Residency | Properties in Hennur Bangalore</title>
+  <title>Brick Residency | Golden Earth Avenue - Hennur</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -9,13 +9,14 @@
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       background: #f8f9fb;
+      color: #333;
     }
 
     header {
       background: white;
       padding: 20px 40px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      font-size: 22px;
+      font-size: 24px;
       font-weight: bold;
     }
 
@@ -31,11 +32,16 @@
       margin: auto;
     }
 
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    /* FILTERS */
     .filters {
       display: flex;
       gap: 15px;
-      margin-bottom: 30px;
       flex-wrap: wrap;
+      margin-bottom: 30px;
     }
 
     select {
@@ -44,22 +50,18 @@
       border: 1px solid #ccc;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
+    /* CARD */
     .card {
       background: white;
       border-radius: 15px;
       overflow: hidden;
       box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      max-width: 400px;
     }
 
     .card img {
       width: 100%;
-      height: 180px;
+      height: 220px;
       object-fit: cover;
     }
 
@@ -70,12 +72,13 @@
     .price {
       color: #28a745;
       font-weight: bold;
+      font-size: 18px;
     }
 
     .btn {
       display: inline-block;
       margin-top: 10px;
-      padding: 8px 12px;
+      padding: 8px 14px;
       border-radius: 6px;
       text-decoration: none;
       font-size: 14px;
@@ -86,6 +89,12 @@
       color: white;
     }
 
+    .whatsapp-btn {
+      background: #25D366;
+      color: white;
+    }
+
+    /* SECTION */
     .section {
       margin-top: 50px;
       background: white;
@@ -93,7 +102,51 @@
       border-radius: 12px;
     }
 
-    .whatsapp {
+    /* GALLERY */
+    .slider {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slides {
+      display: flex;
+      transition: 0.5s;
+    }
+
+    .slides img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    /* CHOOSE US */
+    .choose-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .choose-box {
+      background: #f1f1f1;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    /* FLOAT WHATSAPP */
+    .whatsapp-float {
       position: fixed;
       bottom: 20px;
       right: 20px;
@@ -113,20 +166,20 @@
 
 <div class="container">
 
-  <h2>Premium Properties by Brick Residency</h2>
+  <h2>Golden Earth Avenue - Premium Project</h2>
 
+  <!-- FILTERS -->
   <div class="filters">
     <select id="type" onchange="filterProperties()">
       <option value="all">Type</option>
       <option value="2bhk">2 BHK</option>
       <option value="3bhk">3 BHK</option>
-      <option value="villa">Villa</option>
+      <option value="villa">Duplex Villa</option>
     </select>
 
     <select id="location" onchange="filterProperties()">
       <option value="all">Location</option>
       <option value="hennur">Hennur</option>
-      <option value="hebbal">Hebbal</option>
     </select>
 
     <select id="budget" onchange="filterProperties()">
@@ -137,56 +190,98 @@
     </select>
   </div>
 
-  <div class="grid" id="properties">
+  <!-- PROPERTY -->
+  <div class="card" data-type="2bhk" data-location="hennur" data-price="65">
+    <img src="https://via.placeholder.com/800x400">
 
-    <div class="card" data-type="2bhk" data-location="hennur" data-price="65">
-      <img src="https://via.placeholder.com/400x200">
-      <div class="card-content">
-        <h3>2BHK Apartment</h3>
-        <p>Hennur</p>
-        <p class="price">₹65 Lakhs</p>
-        <a href="tel:9999999999" class="btn call-btn">Call Now</a>
-      </div>
+    <div class="card-content">
+      <h3>Golden Earth Avenue</h3>
+      <p>2BHK Apartment | Hennur</p>
+      <p class="price">₹65 Lakhs</p>
+
+      <a href="tel:9999999999" class="btn call-btn">Call Now</a>
+      <a href="https://wa.me/919999999999" class="btn whatsapp-btn">WhatsApp</a>
     </div>
-
   </div>
 
+  <!-- GALLERY -->
   <div class="section">
-    <h2>Why Choose Us</h2>
-    <ul>
-      <li>100+ Happy Clients</li>
-      <li>Verified Properties</li>
-      <li>Local Experts</li>
-      <li>Free Site Visits</li>
+    <h2>Project Gallery</h2>
+
+    <div class="slider">
+      <div class="slides" id="slides">
+        <img src="https://via.placeholder.com/1200x400">
+        <img src="https://via.placeholder.com/1200x400/cccccc">
+        <img src="https://via.placeholder.com/1200x400/999999">
+      </div>
+
+      <span class="prev" onclick="moveSlide(-1)">❮</span>
+      <span class="next" onclick="moveSlide(1)">❯</span>
+    </div>
+  </div>
+
+  <!-- AMENITIES -->
+  <div class="section">
+    <h2>Amenities - Golden Earth Avenue</h2>
+    <ul style="line-height: 1.8;">
+      <li>🏋️ Gym</li>
+      <li>🏢 Club House</li>
+      <li>🌳 Park</li>
+      <li>🏊 Terrace Swimming Pool</li>
+      <li>🛒 Grocery Shop</li>
+      <li>☕ Cafeteria</li>
+      <li>🛡️ 24/7 Security</li>
+      <li>📹 CCTV Monitoring</li>
+      <li>🚗 Ample Car Parking</li>
     </ul>
+  </div>
+
+  <!-- CHOOSE US -->
+  <div class="section">
+    <h2>Why Choose Brick Residency</h2>
+
+    <div class="choose-grid">
+      <div class="choose-box">100+ Happy Clients</div>
+      <div class="choose-box">Verified Properties</div>
+      <div class="choose-box">Local Experts</div>
+      <div class="choose-box">Free Site Visits</div>
+    </div>
   </div>
 
 </div>
 
-<a href="https://wa.me/919999999999" class="whatsapp">Chat</a>
+<!-- FLOAT WHATSAPP -->
+<a href="https://wa.me/919999999999" class="whatsapp-float">Chat</a>
 
 <script>
 function filterProperties() {
   let type = document.getElementById("type").value;
-  let location = document.getElementById("location").value;
   let budget = document.getElementById("budget").value;
 
-  let cards = document.querySelectorAll(".card");
+  let card = document.querySelector(".card");
 
-  cards.forEach(card => {
-    let match = true;
+  let match = true;
 
-    if (type !== "all" && card.dataset.type !== type) match = false;
-    if (location !== "all" && card.dataset.location !== location) match = false;
+  if (type !== "all" && card.dataset.type !== type) match = false;
 
-    let price = parseInt(card.dataset.price);
+  let price = parseInt(card.dataset.price);
 
-    if (budget === "50" && price >= 50) match = false;
-    if (budget === "100" && (price < 50 || price > 100)) match = false;
-    if (budget === "200" && price <= 100) match = false;
+  if (budget === "50" && price >= 50) match = false;
+  if (budget === "100" && (price < 50 || price > 100)) match = false;
+  if (budget === "200" && price <= 100) match = false;
 
-    card.style.display = match ? "block" : "none";
-  });
+  card.style.display = match ? "block" : "none";
+}
+
+/* SLIDER */
+let index = 0;
+
+function moveSlide(step) {
+  let slides = document.getElementById("slides");
+  let total = slides.children.length;
+
+  index = (index + step + total) % total;
+  slides.style.transform = "translateX(-" + (index * 100) + "%)";
 }
 </script>
 
