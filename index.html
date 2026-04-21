@@ -5,47 +5,46 @@
   <title>Brick Residency | Government Approved Luxury</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lora:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
     :root {
-      --emerald: #10b981;
-      --midnight: #020617;
-      --slate-800: #1e293b;
-      --text-gray: #94a3b8;
+      --primary-blue: #1e40af; /* Corporate Blue */
+      --accent-sky: #e0f2fe;
+      --bg-light: #f8fafc;    /* Clean off-white background */
+      --text-main: #1e293b;   /* Dark slate text for readability */
+      --text-muted: #64748b;
     }
 
     body {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Inter', sans-serif;
       margin: 0;
-      background: var(--midnight);
-      color: #f8fafc;
+      background: var(--bg-light);
+      color: var(--text-main);
       line-height: 1.6;
     }
 
     header {
-      background: rgba(2, 6, 23, 0.9);
+      background: white;
       padding: 15px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid var(--slate-800);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       position: sticky;
       top: 0;
-      backdrop-filter: blur(10px);
       z-index: 1000;
     }
 
     .rera-badge {
-      background: rgba(16, 185, 129, 0.1);
-      color: var(--emerald);
-      border: 1px solid var(--emerald);
-      padding: 4px 12px;
-      border-radius: 4px;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 1px;
+      background: #f0fdf4;
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 700;
     }
 
     .container {
@@ -55,17 +54,107 @@
     }
 
     .section {
-      margin-top: 60px;
+      margin-top: 40px;
       padding: 40px;
-      background: var(--slate-800);
-      border-radius: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
 
-    h1, h2 { font-family: 'Playfair Display', serif; color: white; }
-    h2 { border-left: 4px solid var(--emerald); padding-left: 15px; margin-bottom: 30px; }
+    h1, h2 { font-family: 'Lora', serif; color: #0f172a; }
+    h2 { border-bottom: 3px solid var(--primary-blue); display: inline-block; padding-bottom: 5px; margin-bottom: 30px; }
 
     /* HERO */
     .hero {
       text-align: center;
-      padding: 100px 20px;
-      background: linear-gradient(rgba(2, 6, 23, 0.7), rgba(2, 6, 23, 0.7)), url
+      padding: 80px 20px;
+      background: linear-gradient(rgba(30, 64, 175, 0.85), rgba(30, 64, 175, 0.85)), url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1200&q=80') center/cover;
+      border-radius: 12px;
+      color: white;
+    }
+
+    .hero h1 { color: white; font-size: 2.8rem; }
+
+    .btn {
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary { background: var(--primary-blue); color: white; }
+    .btn-primary:hover { background: #1e3a8a; transform: translateY(-2px); }
+
+    /* LEAD FORM */
+    .form-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .lead-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      background: var(--accent-sky);
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .lead-form input, .lead-form select {
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #cbd5e1;
+      background: white;
+      font-size: 1rem;
+    }
+
+    /* PROPERTY CARDS */
+    .property-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .prop-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      transition: 0.3s;
+    }
+
+    .prop-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+    .prop-info { padding: 20px; }
+    .prop-price { color: var(--primary-blue); font-size: 1.4rem; font-weight: bold; }
+
+    @media (max-width: 768px) {
+      .form-container { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div style="font-size: 24px; font-weight: 800; color: var(--primary-blue);">BRICK <span style="color: #64748b;">RESIDENCY</span></div>
+  <div class="rera-badge"><i class="fas fa-university"></i> RERA APPROVED BY GOVT.</div>
+</header>
+
+<div class="container">
+
+  <section class="hero">
+    <h1>Luxury Homes in Hennur</h1>
+    <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 30px;">Premium 2, 3 BHK Apartments & 4BHK Duplex Villas</p>
+    <a href="#enquiry" class="btn btn-primary" style="background: white; color: var(--primary-blue);">Request Pricing</a>
+  </section>
+
+  <section class="section">
+    <h2>Available Units</h2>
+    <div class="property-grid">
+      <div class="prop-card">
+        <img src="
