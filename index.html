@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brick Residency | Official Developer Site | North Bangalore</title>
+    <title>Brick Residency | Specification Excellence</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -12,8 +12,8 @@
         :root {
             --primary: #0f172a;
             --accent: #2563eb;
-            --gold: #b45309;
-            --light-bg: #f1f5f9;
+            --light-bg: #f8fafc;
+            --border: #e2e8f0;
         }
 
         * { box-sizing: border-box; transition: 0.3s ease; }
@@ -22,10 +22,8 @@
             margin: 0; 
             background-color: #fff; 
             color: #334155; 
-            line-height: 1.6;
         }
 
-        /* 1. TOP NAV */
         header {
             background: white;
             padding: 15px 8%;
@@ -37,68 +35,108 @@
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
-        .logo { font-size: 1.2rem; font-weight: 700; color: var(--primary); letter-spacing: 1px; }
-        .rera-tag { font-size: 0.7rem; color: #15803d; background: #dcfce7; padding: 5px 12px; border-radius: 4px; font-weight: 600; }
 
         .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
 
-        /* 2. SECTION DESIGN */
         .section-white {
             background: white;
             padding: 50px;
-            border: 1px solid #e2e8f0;
-            border-radius: 4px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
             margin-bottom: 40px;
         }
+
         h2 { 
             font-family: 'Playfair Display', serif; 
             font-size: 2.2rem; 
             color: var(--primary); 
-            margin-bottom: 30px;
+            margin-bottom: 10px;
         }
 
-        /* 3. CONFIGURATION CARDS (Fixed 3BHK) */
-        .config-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-        .config-card { 
-            border: 1px solid #e2e8f0; 
-            border-radius: 0; 
-            background: #fff;
+        .sub-h2 { color: var(--accent); font-weight: 700; font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 30px; display: block; }
+
+        /* --- ATTRACTIVE SPECIFICATION GRID --- */
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
         }
-        .config-card:hover { border-color: var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .config-img { width: 100%; height: 250px; object-fit: cover; }
-        .config-body { padding: 25px; text-align: left; }
-        .config-body h3 { margin: 0; font-size: 1.3rem; }
-        .price { font-size: 1.4rem; color: var(--accent); font-weight: 700; margin: 10px 0; }
-        .btn-text { color: var(--accent); font-weight: 700; text-decoration: none; font-size: 0.85rem; }
 
-        /* 4. SPECS & INFO TABLES */
-        .info-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        .info-table td { padding: 12px 0; border-bottom: 1px solid #f1f5f9; font-size: 0.9rem; }
-        .info-table td:last-child { text-align: right; font-weight: 600; color: var(--primary); }
+        .spec-item {
+            padding: 25px;
+            background: var(--light-bg);
+            border-left: 4px solid var(--accent);
+            position: relative;
+        }
 
-        /* 5. ICON GRID */
-        .icon-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; text-align: center; }
-        .icon-box { padding: 25px; background: var(--light-bg); border-radius: 4px; }
-        .icon-box i { font-size: 1.5rem; color: var(--accent); margin-bottom: 10px; }
+        .spec-item i {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+            display: block;
+        }
 
-        /* 6. ENQUIRY FORM (Professional Dark) */
-        .enquiry-form {
+        .spec-item h4 {
+            margin: 0 0 5px 0;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+
+        .spec-item p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #64748b;
+            line-height: 1.4;
+        }
+
+        /* --- IN-SECTION INQUIRY FORM --- */
+        .spec-form-box {
             background: var(--primary);
             color: white;
-            padding: 60px;
-            text-align: center;
-        }
-        .form-grid { max-width: 600px; margin: auto; }
-        .input-box {
-            width: 100%; padding: 15px; margin-bottom: 15px; background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 4px;
-        }
-        .btn-submit {
-            background: var(--accent); color: white; border: none; padding: 18px;
-            width: 100%; font-weight: 700; cursor: pointer; letter-spacing: 1px;
+            padding: 30px;
+            border-radius: 4px;
+            margin-top: 20px;
         }
 
-        /* 7. FLOATING CONTACT */
+        .spec-form-box h4 { margin-top: 0; color: white; font-family: 'Playfair Display', serif; font-size: 1.5rem; }
+
+        .mini-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .mini-form { grid-template-columns: 1fr; }
+        }
+
+        .mini-input {
+            padding: 12px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.05);
+            color: white;
+            border-radius: 4px;
+        }
+
+        .mini-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0 25px;
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        /* --- CONFIG CARDS --- */
+        .config-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        .config-card { border: 1px solid var(--border); background: #fff; overflow: hidden;}
+        .config-img { width: 100%; height: 250px; object-fit: cover; }
+        .config-body { padding: 25px; }
+        .price { font-size: 1.4rem; color: var(--accent); font-weight: 700; margin: 10px 0; }
+
         .float-contact {
             position: fixed; right: 25px; width: 55px; height: 55px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center; color: white; text-decoration: none;
@@ -107,40 +145,27 @@
         .wa { bottom: 25px; background: #25d366; }
         .call { bottom: 90px; background: var(--accent); }
 
-        footer { text-align: center; padding: 50px; background: #f8fafc; color: #64748b; font-size: 0.8rem; border-top: 1px solid #e2e8f0; }
+        footer { text-align: center; padding: 40px; background: var(--light-bg); font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">BRICK RESIDENCY</div>
-    <div class="rera-tag">RERA APPROVED: PRM/KA/1251/446</div>
+    <div style="font-weight:700; letter-spacing:1px;">BRICK RESIDENCY</div>
+    <div style="font-size: 0.7rem; color: #15803d; background: #dcfce7; padding: 5px 12px; border-radius: 4px; font-weight: 600;">RERA APPROVED</div>
 </header>
 
 <div class="container">
 
-    <div class="section-white">
-        <h2>The Landmark of North Bangalore</h2>
-        <p style="color: #64748b; font-size: 1.1rem;">
-            A signature project by <strong>Golden Earth Avenue</strong>. Brick Residency combines structural excellence with contemporary design. Located on the high-growth corridor of Hennur Main Road, these homes are built for those who value privacy, connectivity, and lasting quality.
-        </p>
-        
-        <div class="icon-grid" style="margin-top: 40px;">
-            <div class="icon-box"><i class="fas fa-hammer"></i><br><strong>70% Construction</strong><br><small>Civil Work Complete</small></div>
-            <div class="icon-box"><i class="fas fa-map-marked-alt"></i><br><strong>Location</strong><br><small>Hennur Main Road</small></div>
-            <div class="icon-box"><i class="fas fa-calendar-check"></i><br><strong>Possession</strong><br><small>December 2026</small></div>
-        </div>
-    </div>
-
-    <h2>Available Units</h2>
+    <span class="sub-h2">The Collection</span>
+    <h2>Available Residences</h2>
     <div class="config-grid">
         <div class="config-card">
             <img src="https://images.unsplash.com/photo-1600607687940-4e2a09695d51?auto=format&fit=crop&w=600&q=80" class="config-img">
             <div class="config-body">
                 <h3>Executive 2 BHK</h3>
                 <div class="price">₹65 Lakhs*</div>
-                <p>Super Built-up: 1,250 Sq.Ft</p>
-                <a href="#enquiry" class="btn-text">VIEW FLOOR PLAN <i class="fas fa-arrow-right"></i></a>
+                <p>Spacious Living | 1,250 Sq.Ft</p>
             </div>
         </div>
         <div class="config-card">
@@ -148,8 +173,7 @@
             <div class="config-body">
                 <h3>Luxury 3 BHK</h3>
                 <div class="price">₹88 Lakhs*</div>
-                <p>Super Built-up: 1,680 Sq.Ft</p>
-                <a href="#enquiry" class="btn-text">VIEW FLOOR PLAN <i class="fas fa-arrow-right"></i></a>
+                <p>Corner View | 1,680 Sq.Ft</p>
             </div>
         </div>
         <div class="config-card">
@@ -157,36 +181,83 @@
             <div class="config-body">
                 <h3>Grand Duplex</h3>
                 <div class="price">₹1.50 Cr*</div>
-                <p>Super Built-up: 2,450 Sq.Ft</p>
-                <a href="#enquiry" class="btn-text">VIEW FLOOR PLAN <i class="fas fa-arrow-right"></i></a>
+                <p>Private Garden | 2,450 Sq.Ft</p>
             </div>
         </div>
     </div>
 
     <div class="section-white" style="margin-top: 50px;">
-        <h2>Strategic Location</h2>
-        <table class="info-table">
-            <tr><td>Manyata Tech Park</td><td>10 Mins (4.5 KM)</td></tr>
-            <tr><td>Kempegowda Int. Airport</td><td>25 Mins (22 KM)</td></tr>
-            <tr><td>DPS North Bangalore</td><td>05 Mins (1.2 KM)</td></tr>
-            <tr><td>Manipal Hospital</td><td>12 Mins (5.0 KM)</td></tr>
-            <tr><td>Elements Mall</td><td>08 Mins (3.8 KM)</td></tr>
-        </table>
+        <span class="sub-h2">Excellence in Detail</span>
+        <h2>Technical Specifications</h2>
+        
+        <div class="spec-grid">
+            <div class="spec-item">
+                <i class="fas fa-gem"></i>
+                <h4>Opulent Flooring</h4>
+                <p>Premium 800x1600mm Double Charged Vitrified tiles with Italian Marble finish in Living areas.</p>
+            </div>
+            <div class="spec-item">
+                <i class="fas fa-bath"></i>
+                <h4>Designer Bathrooms</h4>
+                <p>Anti-skid flooring with premium Kohler / Jaquar CP fittings and wall-mounted EWC.</p>
+            </div>
+            <div class="spec-item">
+                <i class="fas fa-door-open"></i>
+                <h4>Majestic Entry</h4>
+                <p>8-foot high Teak Wood main door frame with designer polished shutters and smart locks.</p>
+            </div>
+            <div class="spec-item">
+                <i class="fas fa-bolt"></i>
+                <h4>Reliable Power</h4>
+                <p>100% DG Power backup for common areas and 1KW backup for every individual unit.</p>
+            </div>
+        </div>
+
+        <div class="spec-form-box">
+            <h4>Request Detailed Brochure</h4>
+            <p style="font-size: 0.9rem; opacity: 0.8;">Get the full technical sheet and material list on your WhatsApp.</p>
+            <form onsubmit="sendSpecWhatsApp(); return false;" class="mini-form">
+                <input type="text" id="specName" placeholder="Your Name" class="mini-input" required>
+                <input type="tel" id="specPhone" placeholder="WhatsApp Number" class="mini-input" required>
+                <button type="submit" class="mini-btn">SEND PDF <i class="fas fa-file-pdf" style="margin-left:8px;"></i></button>
+            </form>
+        </div>
     </div>
 
     <div class="section-white">
-        <h2>Premium Specifications</h2>
-        <div class="icon-grid">
-            <div class="icon-box"><i class="fas fa-shield-alt"></i><br><strong>3-Tier Security</strong></div>
-            <div class="icon-box"><i class="fas fa-tint"></i><br><strong>24/7 Water</strong></div>
-            <div class="icon-box"><i class="fas fa-bolt"></i><br><strong>Full Backup</strong></div>
-            <div class="icon-box"><i class="fas fa-parking"></i><br><strong>Dedicated Slot</strong></div>
+        <span class="sub-h2">Location Profile</span>
+        <h2>Connectivity Map</h2>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
+            <div style="background:#f1f5f9; padding:20px; border-radius:4px;">
+                <p><strong>Manyata Tech Park:</strong> 10 Mins</p>
+                <p><strong>DPS North School:</strong> 05 Mins</p>
+                <p><strong>Manipal Hospital:</strong> 12 Mins</p>
+            </div>
+            <div style="background:#f1f5f9; padding:20px; border-radius:4px;">
+                <p><strong>Elements Mall:</strong> 08 Mins</p>
+                <p><strong>Marriott Hotel:</strong> 15 Mins</p>
+                <p><strong>Airport (KIA):</strong> 25 Mins</p>
+            </div>
         </div>
     </div>
 
-    <div class="section-white" style="text-align: center;">
-        <h2 style="font-size: 1.5rem;">Approved Funding Partners</h2>
-        <p style="margin-bottom: 20px;">80% Loan availability from leading institutions</p>
-        <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; font-weight: 700; opacity: 0.6;">
-            <span>SBI</span><span>HDFC</span><span>ICICI BANK</span><span>AXIS BANK</span>
-        </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Brick Residency | Golden Earth Avenue <br> Hennur Main Road, Bangalore</p>
+</footer>
+
+<a href="tel:919876543210" class="float-contact call"><i class="fas fa-phone-alt"></i></a>
+<a href="https://wa.me/919876543210" class="float-contact wa"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+function sendSpecWhatsApp() {
+    const name = document.getElementById('specName').value;
+    const phone = document.getElementById('specPhone').value;
+    const message = `*Tech Spec Enquiry*%0A*Name:* ${name}%0A*Phone:* ${phone}%0A%0A_Please send the detailed Technical Specifications and Material List PDF._`;
+    window.open(`https://wa.me/919876543210?text=${message}`, '_blank');
+}
+</script>
+
+</body>
+</html>
