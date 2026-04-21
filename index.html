@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brick Residency | Official Developer Site</title>
+    <title>Brick Residency | Premium North Bangalore Living</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -59,7 +59,7 @@
             transition: 0.3s;
         }
         .config-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .config-img { width: 100%; height: 230px; object-fit: cover; }
+        .config-img { width: 100%; height: 230px; object-fit: cover; background: #eee; }
         .config-body { padding: 20px; text-align: center; }
         .price { font-size: 1.5rem; color: #2563eb; font-weight: bold; margin: 10px 0; }
 
@@ -72,21 +72,29 @@
         }
         .icon-box { background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; }
         .icon-box i { font-size: 2rem; color: #2563eb; margin-bottom: 10px; }
-        .small-tag { display: block; font-size: 0.75rem; color: #64748b; margin-top: 5px; }
         .status-tag { color: #22c55e; font-weight: bold; font-size: 0.8rem; }
 
-        /* 6. LOCATION BOXES */
-        .location-grid {
+        /* 6. LOCATION & SPECS */
+        .details-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
         }
-        .location-cat { background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; }
-        .location-cat h4 { margin-top: 0; color: #2563eb; border-bottom: 1px solid #cbd5e1; padding-bottom: 10px; }
-        .loc-item { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 8px; }
-        .loc-item span:last-child { font-weight: bold; color: #0f172a; }
+        .details-cat { background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; }
+        .details-cat h4 { margin-top: 0; color: #2563eb; border-bottom: 1px solid #cbd5e1; padding-bottom: 10px; }
+        .list-item { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 8px; }
+        .list-item span:last-child { font-weight: bold; }
 
-        /* 7. ENQUIRY FORM */
+        /* 7. TESTIMONIALS */
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .testi-card { background: #f8fafc; padding: 20px; border-radius: 8px; border-bottom: 3px solid #2563eb; }
+        .stars { color: #f59e0b; font-size: 0.8rem; margin-bottom: 10px; }
+
+        /* 8. ENQUIRY FORM */
         .enquiry-form {
             background: #0f172a;
             color: white;
@@ -115,7 +123,7 @@
             font-size: 1.1rem;
         }
 
-        /* 8. FLOAT BUTTONS */
+        /* 9. FLOAT BUTTONS */
         .float-contact {
             position: fixed;
             right: 20px;
@@ -134,7 +142,7 @@
         .wa-float { bottom: 20px; background-color: #25D366; }
         .phone-float { bottom: 85px; background-color: #2563eb; }
 
-        footer { text-align: center; padding: 40px; color: #7f8c8d; }
+        footer { text-align: center; padding: 40px; color: #7f8c8d; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -148,21 +156,134 @@
 
     <div class="section-white">
         <h2>Premium Residential Landmarks</h2>
-        <p>Brick Residency is an architectural masterpiece by <strong>Golden Earth Avenue</strong>. Nestled in the heart of Hennur Main Road, North Bangalore, this project offers a perfect balance of urban connectivity and peaceful living. Experience 70% open spaces, 100% Vastu compliance, and premium smart-home features.</p>
+        <p>Brick Residency by <strong>Golden Earth Avenue</strong> offers elite living in North Bangalore. Designed with 70% open green spaces and 100% Vastu compliance, we provide an unparalleled lifestyle for modern families.</p>
     </div>
 
     <div class="section-white">
-        <h2>Project Status & Timeline</h2>
+        <h2>Project Status & Milestones</h2>
         <div class="icon-grid">
-            <div class="icon-box">
-                <i class="fas fa-file-contract"></i><br>
-                <strong>Land & RERA</strong><br>
-                <span class="status-tag">COMPLETED</span>
+            <div class="icon-box"><i class="fas fa-check-circle"></i><br><strong>RERA Approved</strong><br><span class="status-tag">COMPLETED</span></div>
+            <div class="icon-box"><i class="fas fa-building"></i><br><strong>Structure</strong><br><span class="status-tag">70% READY</span></div>
+            <div class="icon-box"><i class="fas fa-key"></i><br><strong>Possession</strong><br><small>Dec 2026 Onwards</small></div>
+        </div>
+    </div>
+
+    <h2>Our Home Configurations</h2>
+    <div class="config-grid">
+        <div class="config-card">
+            <img src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=500&q=80" class="config-img">
+            <div class="config-body"><h3>Executive 2 BHK</h3><div class="price">₹65 Lakhs*</div><p>SBA: 1,250 Sq.Ft</p></div>
+        </div>
+        <div class="config-card">
+            <img src="https://images.unsplash.com/photo-1600607687940-4e2a09695d51?auto=format&fit=crop&w=500&q=80" class="config-img">
+            <div class="config-body"><h3>Luxury 3 BHK</h3><div class="price">₹88 Lakhs*</div><p>SBA: 1,680 Sq.Ft</p></div>
+        </div>
+        <div class="config-card">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=500&q=80" class="config-img">
+            <div class="config-body"><h3>Premium Duplex</h3><div class="price">₹1.50 Cr*</div><p>SBA: 2,450 Sq.Ft</p></div>
+        </div>
+    </div>
+
+    <div class="section-white" style="margin-top: 40px;">
+        <h2>Elite Specifications</h2>
+        <div class="details-grid">
+            <div class="details-cat">
+                <h4>Finishes</h4>
+                <div class="list-item"><span>Flooring</span><span>Italian Marble Finish</span></div>
+                <div class="list-item"><span>Fittings</span><span>Kohler / Jaquar</span></div>
+                <div class="list-item"><span>Doors</span><span>Teak Wood Main Door</span></div>
             </div>
-            <div class="icon-box">
-                <i class="fas fa-building"></i><br>
-                <strong>Civil Work</strong><br>
-                <span class="status-tag">70% READY</span>
+            <div class="details-cat">
+                <h4>Smart Features</h4>
+                <div class="list-item"><span>Security</span><span>Smart Video Bell</span></div>
+                <div class="list-item"><span>Automation</span><span>App-Controlled Lights</span></div>
+                <div class="list-item"><span>Power</span><span>100% DG Backup</span></div>
             </div>
-            <div class="icon-box">
-                <i class="fas fa-paint-roller"></i><br>
+        </div>
+    </div>
+
+    <div class="section-white">
+        <h2>World-Class Amenities</h2>
+        <div class="icon-grid">
+            <div class="icon-box"><i class="fas fa-swimmer"></i><br>Infinity Pool</div>
+            <div class="icon-box"><i class="fas fa-dumbbell"></i><br>Modern Gym</div>
+            <div class="icon-box"><i class="fas fa-leaf"></i><br>Zen Garden</div>
+            <div class="icon-box"><i class="fas fa-shield-alt"></i><br>3-Tier Security</div>
+        </div>
+    </div>
+
+    <div class="section-white">
+        <h2>Connectivity & Location</h2>
+        <div class="details-grid">
+            <div class="details-cat">
+                <h4>Work Hubs</h4>
+                <div class="list-item"><span>Manyata Tech Park</span><span>10 Mins</span></div>
+                <div class="list-item"><span>KIA Airport</span><span>25 Mins</span></div>
+            </div>
+            <div class="details-cat">
+                <h4>Schools</h4>
+                <div class="list-item"><span>DPS North</span><span>05 Mins</span></div>
+                <div class="list-item"><span>Vidyashilp Academy</span><span>12 Mins</span></div>
+            </div>
+            <div class="details-cat">
+                <h4>Leisure</h4>
+                <div class="list-item"><span>Elements Mall</span><span>07 Mins</span></div>
+                <div class="list-item"><span>Marriott Hotel</span><span>15 Mins</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-white">
+        <h2>Approved Bank Partners</h2>
+        <div class="icon-grid">
+            <div class="icon-box"><strong>SBI</strong></div>
+            <div class="icon-box"><strong>HDFC</strong></div>
+            <div class="icon-box"><strong>ICICI</strong></div>
+            <div class="icon-box"><strong>AXIS</strong></div>
+        </div>
+    </div>
+
+    <div class="section-white">
+        <h2>What Our Clients Say</h2>
+        <div class="testi-grid">
+            <div class="testi-card"><div class="stars">★★★★★</div><p>"Top-notch construction and very professional delivery."</p><strong>- Ramesh Kumar</strong></div>
+            <div class="testi-card"><div class="stars">★★★★★</div><p>"Best location for tech professionals in Bangalore."</p><strong>- Priya Sharma</strong></div>
+        </div>
+    </div>
+
+    <div class="enquiry-form" id="enquiry">
+        <h2>Get Pricing & Brochure</h2>
+        <p>Register now for an exclusive site visit.</p>
+        <form onsubmit="sendToWhatsApp(); return false;">
+            <input type="text" id="custName" placeholder="Full Name" class="input-field" required>
+            <input type="tel" id="custPhone" placeholder="Mobile Number" class="input-field" required>
+            <select id="custConfig" class="input-field" style="height:45px;">
+                <option value="2 BHK">2 BHK</option>
+                <option value="3 BHK">3 BHK</option>
+                <option value="Duplex">Duplex Villa</option>
+            </select>
+            <button type="submit" class="btn-call">Get Brochure on WhatsApp</button>
+        </form>
+    </div>
+
+</div>
+
+<footer>
+    <p>&copy; 2026 Brick Residency | Golden Earth Avenue <br> Hennur Main Road, Bangalore</p>
+</footer>
+
+<a href="tel:9876543210" class="float-contact phone-float"><i class="fas fa-phone-alt"></i></a>
+<a href="https://wa.me/919876543210" class="float-contact wa-float"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+function sendToWhatsApp() {
+    const name = document.getElementById('custName').value;
+    const phone = document.getElementById('custPhone').value;
+    const config = document.getElementById('custConfig').value;
+    const message = `Hi Brick Residency,%0A%0AI want the brochure for *${config}*.%0A%0A*Name:* ${name}%0A*Phone:* ${phone}`;
+    window.open(`https://wa.me/919876543210?text=${message}`, '_blank');
+}
+</script>
+
+</body>
+</html>
