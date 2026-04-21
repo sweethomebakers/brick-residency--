@@ -2,83 +2,132 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Brick Residency | Luxury Living</title>
+  <title>Brick Residency | Official Developer Site</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    * { box-sizing: border-box; }
+    /* 1. RESET & BASE - Ensuring absolute visibility */
+    * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
     body { 
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+      font-family: 'Helvetica Neue', Arial, sans-serif; 
       margin: 0; 
-      background-color: #ffffff; 
-      color: #1a1a1a; 
+      background-color: #ffffff !important; /* Forces white background */
+      color: #333333 !important;           /* Forces dark text */
       line-height: 1.6;
     }
 
+    /* 2. HEADER */
     header {
-      background: #1e3a8a;
-      color: white;
-      padding: 15px 5%;
+      background: #101828; /* Professional Midnight Blue */
+      color: #ffffff;
+      padding: 20px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      border-bottom: 4px solid #2563eb;
     }
 
-    .container { width: 92%; max-width: 1200px; margin: auto; padding: 20px 0; }
+    .container { width: 90%; max-width: 1100px; margin: auto; padding-top: 40px; }
 
-    /* HERO */
+    /* 3. HERO SECTION */
     .hero {
       background: #f8fafc;
-      padding: 40px;
-      text-align: center;
       border: 1px solid #e2e8f0;
-      border-radius: 15px;
-      margin-bottom: 40px;
+      padding: 60px 20px;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: 50px;
     }
 
-    /* PROPERTY CARDS */
+    /* 4. ABOUT US SECTION */
+    .about-box {
+      background: #ffffff;
+      border-left: 10px solid #101828;
+      padding: 30px;
+      margin-bottom: 50px;
+      box-shadow: 5px 5px 15px rgba(0,0,0,0.05);
+    }
+
+    /* 5. PROPERTY GRID */
     .property-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-      margin-bottom: 40px;
+      gap: 30px;
+      margin-bottom: 50px;
     }
-
-    .property-card {
-      border: 1px solid #cbd5e1;
-      border-radius: 12px;
+    .card {
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
       overflow: hidden;
       background: white;
-      transition: transform 0.3s;
     }
+    .card-img { width: 100%; height: 200px; background: #e9ecef; object-fit: cover; }
+    .card-body { padding: 20px; }
+    .price { color: #2563eb; font-size: 1.3rem; font-weight: bold; }
 
-    .property-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
-
-    .property-img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
-
-    .property-details { padding: 20px; }
-    .price-tag { color: #2563eb; font-size: 1.4rem; font-weight: bold; display: block; margin: 10px 0; }
-
-    /* SECTION TITLES */
-    h2 { color: #1e3a8a; border-left: 5px solid #2563eb; padding-left: 15px; margin-bottom: 30px; }
-
-    /* AMENITIES */
+    /* 6. AMENITIES SECTION */
     .amenity-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 15px;
-      margin-bottom: 40px;
+      gap: 20px;
+      margin-bottom: 50px;
     }
-
     .amenity-item {
       background: #f1f5f9;
-      padding: 15px;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .amenity-item i { color: #2563eb; font-size: 1.5rem; margin-bottom: 10px; display: block; }
+
+    /* 7. ENQUIRY FORM */
+    .enquiry-form {
+      background: #f1f5f9;
+      padding: 40px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+    }
+    .form-control {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0 20px;
+      border: 1px solid #94a3b8;
+      border-radius: 4px;
+    }
+    .btn-primary {
+      background: #2563eb;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    h2 { color: #101828; margin-bottom: 25px; font-size: 2rem; }
+    footer { text-align: center; padding: 50px; background: #101828; color: white; margin-top: 50px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div style="font-size: 1.5rem; font-weight: 800; letter-spacing: 1px;">BRICK RESIDENCY</div>
+  <div style="background: #16a34a; padding: 6px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold;">RERA: PRM/KA/1234/2026</div>
+</header>
+
+<div class="container">
+
+  <div class="hero">
+    <h1>Luxury Homes at Hennur Main Road</h1>
+    <p style="font-size: 1.2rem; color: #64748b;">A Project by Golden Earth Avenue - Redefining Urban Living</p>
+    <p><strong>Site Visit Available: +91 98765 43210</strong></p>
+  </div>
+
+  <div class="about-box">
+    <h2>About Us</h2>
+    <p>With over 15 years of excellence in the real estate industry, <strong>Brick Residency</strong> has been a pioneer in creating sustainable and luxury living spaces. Our latest project, Golden Earth Avenue, is designed for the modern family that values space, privacy, and world-class amenities. We take pride in our 100% transparent documentation and on-time project delivery.</p>
+  </div>
