@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Brick Residency | Official Site</title>
+  <title>Brick Residency | Luxury & Trust</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -10,114 +10,50 @@
 
   <style>
     :root {
-      --primary: #0f172a;
-      --secondary: #2563eb;
-      --success: #16a34a;
-      --bg-body: #f1f5f9;
+      --primary: #0f172a;    /* Deep Navy */
+      --secondary: #2563eb;  /* Clear Blue */
+      --success: #16a34a;    /* RERA Green */
+      --bg-light: #f8fafc;   /* Very Light Grey (Ensures visibility) */
       --white: #ffffff;
     }
 
     body {
       font-family: 'Outfit', sans-serif;
       margin: 0;
-      background-color: var(--bg-body);
+      background-color: var(--bg-light);
       color: var(--primary);
+      line-height: 1.6;
       scroll-behavior: smooth;
     }
 
-    /* NAVIGATION */
-    nav {
+    /* HEADER */
+    header {
       background: var(--white);
-      padding: 1rem 5%;
+      padding: 15px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
-    .nav-links { display: flex; gap: 25px; }
-    .nav-links a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 0.9rem; }
-    .nav-links a:hover { color: var(--secondary); }
 
-    .brand { font-size: 1.5rem; font-weight: 700; letter-spacing: -1px; text-decoration: none; color: var(--primary); }
+    .brand { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
     .brand span { color: var(--secondary); }
 
-    .container { max-width: 1200px; margin: auto; padding: 0 20px; }
-
-    /* HERO SECTION */
-    .hero {
-      height: 80vh;
-      background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), 
-                  url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80') center/cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-      border-radius: 0 0 50px 50px;
-    }
-
-    /* SECTION TITLES */
-    .section-title { text-align: center; margin: 80px 0 40px; }
-    .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 10px; }
-    .section-title .divider { width: 50px; height: 5px; background: var(--secondary); margin: auto; border-radius: 10px; }
-
-    /* ENQUIRY FORM */
-    .enquiry-card {
-      background: var(--white);
-      padding: 40px;
-      border-radius: 30px;
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 50px;
-      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1);
-    }
-    .form-input {
-      width: 100%;
-      padding: 15px;
-      margin-bottom: 15px;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      font-family: inherit;
-    }
-    .btn-submit {
-      background: var(--secondary);
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      border-radius: 10px;
+    .rera-badge {
+      background: #dcfce7;
+      color: var(--success);
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.8rem;
       font-weight: 700;
-      width: 100%;
-      cursor: pointer;
+      border: 1px solid #bbf7d0;
     }
 
-    /* PREVIOUS BLOCKS INTEGRATED */
-    .status-card, .plan-grid, .financial-section { margin-bottom: 50px; }
-    .progress-bar { background: #e2e8f0; height: 10px; border-radius: 10px; margin-top: 8px; overflow: hidden; }
-    .fill { height: 100%; background: var(--secondary); }
-    
-    .financial-section { background: var(--primary); color: white; padding: 40px; border-radius: 30px; }
-    .emi-value { font-size: 3rem; color: #60a5fa; font-weight: 700; }
+    .container { max-width: 1200px; margin: auto; padding: 20px; }
 
-    @media (max-width: 850px) {
-      .nav-links { display: none; }
-      .enquiry-card { grid-template-columns: 1fr; }
-    }
-  </style>
-</head>
-<body>
-
-<nav>
-  <a href="#" class="brand">BRICK <span>RESIDENCY</span></a>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#progress">Progress</a>
-    <a href="#plans">Floor Plans</a>
-    <a href="#finance">Finance</a>
-    <a href="#contact">Contact</a>
-  </div>
-  <div style="background: #dcfce7; color: #16a34a; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 800; border: 1px solid #bbf7d0;">
-    RERA APPROVED
+    /* HERO */
+    .hero {
+      background: linear-gradient(rgba(15, 23, 42, 0
