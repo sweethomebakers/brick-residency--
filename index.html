@@ -1,76 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <style>
-    /* ... (Previous Styles) ... */
+  <meta charset="UTF-8">
+  <title>Brick Residency | Live Updates & Financials</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    /* BANK LOGOS SECTION */
-    .bank-logos-container {
-      margin-top: 25px;
-      padding: 20px;
-      background: #ffffff;
-      border-radius: 15px;
-      border: 1px solid #e2e8f0;
+  <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #2563eb;
+      --success: #16a34a;
+      --bg-body: #f1f5f9;
+      --white: #ffffff;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      background-color: var(--bg-body);
+      color: var(--primary);
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: var(--white);
+      padding: 1rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .brand { font-size: 1.5rem; font-weight: 700; letter-spacing: -1px; }
+    .brand span { color: var(--secondary); }
+    
+    .rera-tag {
+      background: #dcfce7;
+      color: var(--success);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      border: 1px solid #bbf7d0;
+    }
+
+    .container { max-width: 1200px; margin: auto; padding: 0 20px; }
+
+    /* SECTION TITLES */
+    .section-title { text-align: center; margin: 60px 0 40px; }
+    .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 10px; }
+    .section-title .divider { width: 60px; height: 4px; background: var(--secondary); margin: auto; }
+
+    /* EMI CALCULATOR & BANKS */
+    .financial-section {
+      background: var(--primary);
+      color: white;
+      padding: 50px;
+      border-radius: 30px;
+      margin-bottom: 40px;
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .calc-inputs input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0 20px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.05);
+      color: white;
+      font-size: 1rem;
+    }
+
+    .emi-display {
+      background: rgba(255,255,255,0.05);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      border: 1px dashed var(--secondary);
+    }
+
+    .emi-value {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #60a5fa;
+      display: block;
+      margin: 10px 0;
+    }
+
+    .bank-bar {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      margin-top: -30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       text-align: center;
     }
 
-    .bank-logos-container p {
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #64748b;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 15px;
-    }
-
-    .logo-row {
+    .bank-logos {
       display: flex;
       justify-content: center;
-      align-items: center;
+      gap: 40px;
       flex-wrap: wrap;
-      gap: 30px;
-      opacity: 0.8;
-      filter: grayscale(100%); /* Keeps it professional and uniform */
-      transition: 0.3s;
+      margin-top: 20px;
+      filter: grayscale(1);
+      opacity: 0.7;
     }
 
-    .logo-row:hover {
-      filter: grayscale(0%); /* Color returns on hover */
+    .bank-logos img { height: 35px; object-fit: contain; }
+
+    /* CONSTRUCTION STATUS */
+    .status-card {
+      background: white;
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     }
 
-    .bank-logo {
-      height: 35px; /* Standardized height */
-      max-width: 120px;
-      object-fit: contain;
+    .progress-item { margin-bottom: 25px; }
+    .progress-bar {
+      background: #e2e8f0;
+      height: 10px;
+      border-radius: 10px;
+      margin-top: 8px;
+      overflow: hidden;
     }
 
-    /* EMI Result Highlight */
-    .emi-amount {
-      font-size: 2.8rem;
-      color: #2563eb; /* Professional Blue */
-      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    .fill { height: 100%; background: var(--secondary); border-radius: 10px; }
+
+    /* FLOOR PLANS */
+    .plan-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .plan-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+    .plan-card img { width: 100%; height: 250px; object-fit: contain; background: #f8fafc; padding: 20px; }
+
+    @media (max-width: 850px) {
+      .calc-grid { grid-template-columns: 1fr; }
+      .emi-value { font-size: 2.5rem; }
     }
   </style>
 </head>
 <body>
 
+<header>
+  <div class="brand">BRICK <span>RESIDENCY</span></div>
+  <div class="rera-tag"><i class="fas fa-check-circle"></i> RERA: PRM/KA/1234/2026</div>
+</header>
+
 <div class="container">
 
-  <section id="calculator">
-    <div class="section-title">
-      <h2>Financial Planning</h2>
-      <div class="divider"></div>
-    </div>
+  <div class="section-title">
+    <h2>Project Progress</h2>
+    <div class="divider"></div>
+  </div>
 
-    <div class="calc-box" style="background: #0f172a; color: white; padding: 40px; border-radius: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+  <div class="status-card">
+    <div class="progress-item">
+      <div style="display:flex; justify-content:space-between"><strong>Land Excavation</strong> <span>100%</span></div>
+      <div class="progress-bar"><div class="fill" style="width: 100%; background: #16a34a;"></div></div>
+    </div>
+    <div class="progress-item">
+      <div style="display:flex; justify-content:space-between"><strong>Structure (Tower A)</strong> <span>75%</span></div>
+      <div class="progress-bar"><div class="fill" style="width: 75%;"></div></div>
+    </div>
+    <div class="progress-item">
+      <div style="display:flex; justify-content:space-between"><strong>Flooring & Interiors</strong> <span>20%</span></div>
+      <div class="progress-bar"><div class="fill" style="width: 20%;"></div></div>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <h2>Architectural Floor Plans</h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="plan-grid">
+    <div class="plan-card">
+      <img src="https://via.placeholder.com/400x300?text=2BHK+MAP" alt="2BHK">
+      <h3>Premium 2BHK</h3>
+      <p style="color: #64748b;">1250 Sq.Ft | Vastu Compliant</p>
+    </div>
+    <div class="plan-card">
+      <img src="https://via.placeholder.com/400x300?text=3BHK+MAP" alt="3BHK">
+      <h3>Luxury 3BHK</h3>
+      <p style="color: #64748b;">1680 Sq.Ft | 3 Balconies</p>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <h2>Financial Planning</h2>
+    <div class="divider"></div>
+  </div>
+
+  <div class="financial-section">
+    <div class="calc-grid">
       <div class="calc-inputs">
-        <h3 style="color: #60a5fa; margin-top: 0;">EMI Calculator</h3>
-        <div style="margin-bottom: 15px;">
-          <label style="display:block; font-size: 0.8rem; opacity: 0.7;">Loan Amount (₹)</label>
-          <input type="number" id="amount" value="6500000" oninput="calculateEMI()" style="width:100%; padding:10px; border-radius:5px; border:none;">
-        </div>
-        <div style="margin-bottom: 15px;">
-          <label style="display:block; font-size: 0.8rem; opacity: 0.7;">Interest Rate (%)</label>
-          <input type="number" id="rate" value="8.5" step="0.1" oninput="calculateEMI()" style="width:100%; padding:10px; border-radius:5px; border:none;">
-        </div>
-        <div style="margin-
+        <h3 style="margin-top:0">EMI Calculator</h3>
+        <label>Property Value (₹)</label>
+        <input type="number" id="amt" value="6500000" oninput="runCalc()">
+        
+        <label>Interest Rate (%)</label>
+        <input type="number" id="intr" value="8.5" step="0.1" oninput="runCalc()">
+        
+        <label>Tenure (Years)</label>
+        <input type="number" id="ten" value="20" oninput="runCalc()">
+      </div>
+      
+      <div class="emi-display">
+        <p style="margin:0; opacity:0.8">Estimated Monthly EMI</p>
+        <span class="emi-value" id="res">₹56,439</span>
+        <p style="font-size:0.8rem; opacity:0.6">*Subject to bank eligibility</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bank-bar">
+    <p style="font-size:0.8rem; font-weight:700; color:#64748b; text-transform:uppercase">Project Pre-Approved By</p>
+    <div class="bank-logos">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/State_Bank_of_India_logo.svg/1024px-State_Bank_of_India_logo.svg.png">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/ICICI_Bank_Logo.svg/1280px-ICICI_Bank_Logo.svg.png">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/HDFC_Bank_Logo.svg/1280px-HDFC_Bank_Logo.svg.png">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Axis_Bank_logo.svg/1280px-Axis_Bank_logo.svg.png">
+    </div>
+  </div>
+
+</div>
+
+<footer style="text-align: center; padding: 60px 0; opacity: 0.6; font-size: 0.9rem;">
+  &copy; 2026 Brick Residency. All plans and specifications are subject to change.
+</footer>
+
+<script>
+  function runCalc() {
+    const P = document.getElementById('amt').value;
+    const r = document.getElementById('intr').value / 12 / 100;
+    const n = document.getElementById('ten').value * 12;
+    if (P && r && n) {
+      const emi = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      document.getElementById('res').innerText = "₹" + Math.round(emi).toLocaleString('en-IN');
+    }
+  }
+</script>
+
+</body>
+</html>
