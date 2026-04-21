@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Brick Residency | Live Updates & Financials</title>
+  <title>Brick Residency | Official Site</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -25,7 +25,8 @@
       scroll-behavior: smooth;
     }
 
-    header {
+    /* NAVIGATION */
+    nav {
       background: var(--white);
       padding: 1rem 5%;
       display: flex;
@@ -36,235 +37,87 @@
       top: 0;
       z-index: 1000;
     }
+    .nav-links { display: flex; gap: 25px; }
+    .nav-links a { text-decoration: none; color: var(--primary); font-weight: 600; font-size: 0.9rem; }
+    .nav-links a:hover { color: var(--secondary); }
 
-    .brand { font-size: 1.5rem; font-weight: 700; letter-spacing: -1px; }
+    .brand { font-size: 1.5rem; font-weight: 700; letter-spacing: -1px; text-decoration: none; color: var(--primary); }
     .brand span { color: var(--secondary); }
-    
-    .rera-tag {
-      background: #dcfce7;
-      color: var(--success);
-      padding: 6px 14px;
-      border-radius: 50px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      border: 1px solid #bbf7d0;
-    }
 
     .container { max-width: 1200px; margin: auto; padding: 0 20px; }
 
-    /* SECTION TITLES */
-    .section-title { text-align: center; margin: 60px 0 40px; }
-    .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 10px; }
-    .section-title .divider { width: 60px; height: 4px; background: var(--secondary); margin: auto; }
-
-    /* EMI CALCULATOR & BANKS */
-    .financial-section {
-      background: var(--primary);
-      color: white;
-      padding: 50px;
-      border-radius: 30px;
-      margin-bottom: 40px;
-    }
-
-    .calc-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-
-    .calc-inputs input {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0 20px;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.2);
-      background: rgba(255,255,255,0.05);
-      color: white;
-      font-size: 1rem;
-    }
-
-    .emi-display {
-      background: rgba(255,255,255,0.05);
-      padding: 40px;
-      border-radius: 20px;
-      text-align: center;
-      border: 1px dashed var(--secondary);
-    }
-
-    .emi-value {
-      font-size: 3.5rem;
-      font-weight: 700;
-      color: #60a5fa;
-      display: block;
-      margin: 10px 0;
-    }
-
-    .bank-bar {
-      background: white;
-      padding: 30px;
-      border-radius: 20px;
-      margin-top: -30px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-
-    .bank-logos {
+    /* HERO SECTION */
+    .hero {
+      height: 80vh;
+      background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), 
+                  url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80') center/cover;
       display: flex;
+      flex-direction: column;
       justify-content: center;
-      gap: 40px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-      filter: grayscale(1);
-      opacity: 0.7;
-    }
-
-    .bank-logos img { height: 35px; object-fit: contain; }
-
-    /* CONSTRUCTION STATUS */
-    .status-card {
-      background: white;
-      padding: 40px;
-      border-radius: 25px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    }
-
-    .progress-item { margin-bottom: 25px; }
-    .progress-bar {
-      background: #e2e8f0;
-      height: 10px;
-      border-radius: 10px;
-      margin-top: 8px;
-      overflow: hidden;
-    }
-
-    .fill { height: 100%; background: var(--secondary); border-radius: 10px; }
-
-    /* FLOOR PLANS */
-    .plan-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-    }
-
-    .plan-card {
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid #e2e8f0;
+      align-items: center;
+      color: white;
       text-align: center;
-      padding-bottom: 20px;
+      border-radius: 0 0 50px 50px;
     }
 
-    .plan-card img { width: 100%; height: 250px; object-fit: contain; background: #f8fafc; padding: 20px; }
+    /* SECTION TITLES */
+    .section-title { text-align: center; margin: 80px 0 40px; }
+    .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 10px; }
+    .section-title .divider { width: 50px; height: 5px; background: var(--secondary); margin: auto; border-radius: 10px; }
+
+    /* ENQUIRY FORM */
+    .enquiry-card {
+      background: var(--white);
+      padding: 40px;
+      border-radius: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 50px;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1);
+    }
+    .form-input {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 15px;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      font-family: inherit;
+    }
+    .btn-submit {
+      background: var(--secondary);
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      border-radius: 10px;
+      font-weight: 700;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    /* PREVIOUS BLOCKS INTEGRATED */
+    .status-card, .plan-grid, .financial-section { margin-bottom: 50px; }
+    .progress-bar { background: #e2e8f0; height: 10px; border-radius: 10px; margin-top: 8px; overflow: hidden; }
+    .fill { height: 100%; background: var(--secondary); }
+    
+    .financial-section { background: var(--primary); color: white; padding: 40px; border-radius: 30px; }
+    .emi-value { font-size: 3rem; color: #60a5fa; font-weight: 700; }
 
     @media (max-width: 850px) {
-      .calc-grid { grid-template-columns: 1fr; }
-      .emi-value { font-size: 2.5rem; }
+      .nav-links { display: none; }
+      .enquiry-card { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <div class="brand">BRICK <span>RESIDENCY</span></div>
-  <div class="rera-tag"><i class="fas fa-check-circle"></i> RERA: PRM/KA/1234/2026</div>
-</header>
-
-<div class="container">
-
-  <div class="section-title">
-    <h2>Project Progress</h2>
-    <div class="divider"></div>
+<nav>
+  <a href="#" class="brand">BRICK <span>RESIDENCY</span></a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#progress">Progress</a>
+    <a href="#plans">Floor Plans</a>
+    <a href="#finance">Finance</a>
+    <a href="#contact">Contact</a>
   </div>
-
-  <div class="status-card">
-    <div class="progress-item">
-      <div style="display:flex; justify-content:space-between"><strong>Land Excavation</strong> <span>100%</span></div>
-      <div class="progress-bar"><div class="fill" style="width: 100%; background: #16a34a;"></div></div>
-    </div>
-    <div class="progress-item">
-      <div style="display:flex; justify-content:space-between"><strong>Structure (Tower A)</strong> <span>75%</span></div>
-      <div class="progress-bar"><div class="fill" style="width: 75%;"></div></div>
-    </div>
-    <div class="progress-item">
-      <div style="display:flex; justify-content:space-between"><strong>Flooring & Interiors</strong> <span>20%</span></div>
-      <div class="progress-bar"><div class="fill" style="width: 20%;"></div></div>
-    </div>
-  </div>
-
-  <div class="section-title">
-    <h2>Architectural Floor Plans</h2>
-    <div class="divider"></div>
-  </div>
-
-  <div class="plan-grid">
-    <div class="plan-card">
-      <img src="https://via.placeholder.com/400x300?text=2BHK+MAP" alt="2BHK">
-      <h3>Premium 2BHK</h3>
-      <p style="color: #64748b;">1250 Sq.Ft | Vastu Compliant</p>
-    </div>
-    <div class="plan-card">
-      <img src="https://via.placeholder.com/400x300?text=3BHK+MAP" alt="3BHK">
-      <h3>Luxury 3BHK</h3>
-      <p style="color: #64748b;">1680 Sq.Ft | 3 Balconies</p>
-    </div>
-  </div>
-
-  <div class="section-title">
-    <h2>Financial Planning</h2>
-    <div class="divider"></div>
-  </div>
-
-  <div class="financial-section">
-    <div class="calc-grid">
-      <div class="calc-inputs">
-        <h3 style="margin-top:0">EMI Calculator</h3>
-        <label>Property Value (₹)</label>
-        <input type="number" id="amt" value="6500000" oninput="runCalc()">
-        
-        <label>Interest Rate (%)</label>
-        <input type="number" id="intr" value="8.5" step="0.1" oninput="runCalc()">
-        
-        <label>Tenure (Years)</label>
-        <input type="number" id="ten" value="20" oninput="runCalc()">
-      </div>
-      
-      <div class="emi-display">
-        <p style="margin:0; opacity:0.8">Estimated Monthly EMI</p>
-        <span class="emi-value" id="res">₹56,439</span>
-        <p style="font-size:0.8rem; opacity:0.6">*Subject to bank eligibility</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="bank-bar">
-    <p style="font-size:0.8rem; font-weight:700; color:#64748b; text-transform:uppercase">Project Pre-Approved By</p>
-    <div class="bank-logos">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/State_Bank_of_India_logo.svg/1024px-State_Bank_of_India_logo.svg.png">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/ICICI_Bank_Logo.svg/1280px-ICICI_Bank_Logo.svg.png">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/HDFC_Bank_Logo.svg/1280px-HDFC_Bank_Logo.svg.png">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Axis_Bank_logo.svg/1280px-Axis_Bank_logo.svg.png">
-    </div>
-  </div>
-
-</div>
-
-<footer style="text-align: center; padding: 60px 0; opacity: 0.6; font-size: 0.9rem;">
-  &copy; 2026 Brick Residency. All plans and specifications are subject to change.
-</footer>
-
-<script>
-  function runCalc() {
-    const P = document.getElementById('amt').value;
-    const r = document.getElementById('intr').value / 12 / 100;
-    const n = document.getElementById('ten').value * 12;
-    if (P && r && n) {
-      const emi = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-      document.getElementById('res').innerText = "₹" + Math.round(emi).toLocaleString('en-IN');
-    }
-  }
-</script>
-
-</body>
-</html>
+  <div style="background: #dcfce7; color: #16a34a; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 800; border: 1px solid #bbf7d0;">
+    RERA APPROVED
