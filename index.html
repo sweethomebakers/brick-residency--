@@ -10,10 +10,10 @@
 
   <style>
     :root {
-      --primary: #0f172a;    /* Deep Navy */
-      --secondary: #2563eb;  /* Professional Blue */
-      --success: #16a34a;    /* RERA Green */
-      --bg-body: #f1f5f9;    /* Soft Grey */
+      --primary: #0f172a;
+      --secondary: #2563eb;
+      --success: #16a34a;
+      --bg-body: #f1f5f9;
       --white: #ffffff;
     }
 
@@ -25,7 +25,6 @@
       scroll-behavior: smooth;
     }
 
-    /* HEADER */
     header {
       background: var(--white);
       padding: 1rem 5%;
@@ -38,9 +37,9 @@
       z-index: 1000;
     }
 
-    .brand { font-size: 1.5rem; font-weight: 700; letter-spacing: -1px; }
+    .brand { font-size: 1.5rem; font-weight: 700; }
     .brand span { color: var(--secondary); }
-    
+
     .rera-tag {
       background: #dcfce7;
       color: var(--success);
@@ -48,15 +47,13 @@
       border-radius: 50px;
       font-size: 0.8rem;
       font-weight: 700;
-      border: 1px solid #bbf7d0;
     }
 
     .container { max-width: 1200px; margin: auto; padding: 0 20px; }
 
-    /* HERO */
     .hero {
       background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
-                  url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=1200&q=80') center/cover;
+      url('https://images.unsplash.com/photo-1582407947304-fd86f028f716') center/cover;
       height: 70vh;
       display: flex;
       flex-direction: column;
@@ -68,18 +65,9 @@
       margin-bottom: 40px;
     }
 
-    .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin: 0; }
-    .hero p { font-size: 1.2rem; opacity: 0.9; margin: 15px 0 30px; }
+    .section-title { text-align: center; margin-bottom: 40px; }
+    .section-title h2 { font-size: 2.2rem; }
 
-    /* SECTION STYLES */
-    .section-title {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 10px; }
-    .section-title .divider { width: 60px; height: 4px; background: var(--secondary); margin: auto; }
-
-    /* AMENITIES GRID */
     .amenities-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -92,14 +80,8 @@
       padding: 30px;
       border-radius: 20px;
       text-align: center;
-      transition: 0.3s;
-      border: 1px solid #e2e8f0;
     }
 
-    .amenity-card:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
-    .amenity-card i { font-size: 2.5rem; color: var(--secondary); margin-bottom: 15px; }
-
-    /* LOCATION SECTION */
     .location-wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -112,18 +94,13 @@
 
     .location-item {
       display: flex;
-      align-items: center;
       gap: 20px;
-      padding: 15px 0;
-      border-bottom: 1px solid #f1f5f9;
+      padding: 10px 0;
     }
 
-    .location-item i { color: var(--secondary); width: 25px; }
-
-    /* ENQUIRY FORM */
     .enquiry-section {
       background: var(--primary);
-      color: var(--white);
+      color: white;
       padding: 60px;
       border-radius: 30px;
       display: grid;
@@ -132,15 +109,11 @@
       margin-bottom: 60px;
     }
 
-    .form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px; }
-    .form-group label { font-size: 0.9rem; opacity: 0.8; }
-    .form-group input, .form-group select {
+    input, select {
       padding: 12px;
       border-radius: 8px;
       border: none;
-      background: rgba(255,255,255,0.1);
-      color: white;
-      font-family: inherit;
+      margin-bottom: 10px;
     }
 
     .btn-submit {
@@ -149,18 +122,13 @@
       padding: 15px;
       border: none;
       border-radius: 8px;
-      font-weight: 700;
-      cursor: pointer;
       width: 100%;
-      margin-top: 10px;
     }
 
-    /* FOOTER */
-    footer { text-align: center; padding: 40px; color: var(--text-muted); opacity: 0.7; }
+    footer { text-align: center; padding: 40px; }
 
     @media (max-width: 900px) {
       .location-wrapper, .enquiry-section { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 2.2rem; }
     }
   </style>
 </head>
@@ -168,116 +136,105 @@
 
 <header>
   <div class="brand">BRICK <span>RESIDENCY</span></div>
-  <div class="rera-tag"><i class="fas fa-certificate"></i> RERA APPROVED: PRM/KA/1234/2026</div>
+  <div class="rera-tag">RERA Approved</div>
 </header>
 
 <div class="container">
 
-  <section class="hero">
-    <h1>Luxury Redefined</h1>
-    <p>Premium Living at Golden Earth Avenue, Hennur Main Road</p>
-    <div style="display: flex; gap: 15px;">
-        <a href="#enquiry" class="btn-submit" style="text-decoration: none; padding: 12px 30px;">Request Price List</a>
-    </div>
-  </section>
+<!-- HERO -->
+<section class="hero">
+  <h1>Luxury Redefined</h1>
+  <p>Golden Earth Avenue</p>
 
-  <div class="section-title">
-    <h2>Elite Amenities</h2>
-    <div class="divider"></div>
+  <!-- ADDED URGENCY -->
+  <p style="color:#facc15; font-weight:bold;">
+    Limited Units Available | Pre-Launch Offer
+  </p>
+</section>
+
+<!-- ADDED PRICING -->
+<div class="section-title"><h2>Pricing & Configurations</h2></div>
+
+<div class="amenities-grid">
+  <div class="amenity-card"><h3>2 BHK</h3><p>₹65 Lakhs</p></div>
+  <div class="amenity-card"><h3>3 BHK</h3><p>₹85 Lakhs</p></div>
+  <div class="amenity-card"><h3>4 BHK Duplex</h3><p>₹1.5 Cr</p></div>
+</div>
+
+<!-- EXISTING AMENITIES -->
+<div class="section-title"><h2>Amenities</h2></div>
+
+<div class="amenities-grid">
+  <div class="amenity-card">Gym</div>
+  <div class="amenity-card">Pool</div>
+  <div class="amenity-card">Security</div>
+</div>
+
+<!-- LOCATION -->
+<div class="location-wrapper">
+  <div>
+
+    <div class="location-item">Airport - 25 mins</div>
+    <div class="location-item">Hospital - 10 mins</div>
+    <div class="location-item">School - 5 mins</div>
+
+    <!-- ADDED NEARBY -->
+    <div class="location-item">Market - 3 mins</div>
+    <div class="location-item">College - 10 mins</div>
+
   </div>
 
-  <div class="amenities-grid">
-    <div class="amenity-card">
-      <i class="fas fa-swimmer"></i>
-      <h3>Infinity Pool</h3>
-      <p>Temperature-controlled rooftop swimming pool.</p>
-    </div>
-    <div class="amenity-card">
-      <i class="fas fa-dumbbell"></i>
-      <h3>Modern Gym</h3>
-      <p>Fully equipped fitness center with personal trainers.</p>
-    </div>
-    <div class="amenity-card">
-      <i class="fas fa-shield-halved"></i>
-      <h3>3-Tier Security</h3>
-      <p>24/7 CCTV, biometric access, and manned patrols.</p>
-    </div>
-    <div class="amenity-card">
-      <i class="fas fa-child-reaching"></i>
-      <h3>Kids Play Zone</h3>
-      <p>Safe and engaging dedicated indoor/outdoor play area.</p>
-    </div>
-  </div>
-
-  <div class="section-title">
-    <h2>Location Advantage</h2>
-    <div class="divider"></div>
-  </div>
-
-  <div class="location-wrapper">
-    <div class="location-info">
-      <div class="location-item">
-        <i class="fas fa-plane"></i>
-        <div><strong>Kempegowda Int'l Airport</strong> - 25 Mins Drive</div>
-      </div>
-      <div class="location-item">
-        <i class="fas fa-briefcase"></i>
-        <div><strong>Manyata Tech Park</strong> - 10 Mins Drive</div>
-      </div>
-      <div class="location-item">
-        <i class="fas fa-hospital"></i>
-        <div><strong>Aster CMI Hospital</strong> - 12 Mins Drive</div>
-      </div>
-      <div class="location-item">
-        <i class="fas fa-graduation-cap"></i>
-        <div><strong>Delhi Public School</strong> - 05 Mins Drive</div>
-      </div>
-    </div>
-    <div style="background: #e2e8f0; border-radius: 20px; display: flex; align-items: center; justify-content: center;">
-        <p style="color: #64748b;"><i class="fas fa-map-marked-alt fa-3x"></i><br>Google Map Integration Placeholder</p>
-    </div>
-  </div>
-
-  <section id="enquiry" class="enquiry-section">
-    <div>
-      <h2 style="color: white; border: none;">Book a Private Tour</h2>
-      <p style="opacity: 0.8; margin-bottom: 30px;">Speak with our senior relationship manager to explore current offers and flexible payment plans.</p>
-      
-      <div style="margin-top: 40px;">
-        <p><i class="fas fa-phone-alt" style="color: var(--secondary);"></i> <strong>Direct Sales:</strong> +91 98765 43210</p>
-        <p><i class="fas fa-envelope" style="color: var(--secondary);"></i> <strong>Email:</strong> sales@brickresidency.com</p>
-        <p><i class="fas fa-map-marker-alt" style="color: var(--secondary);"></i> <strong>Site:</strong> Sy. No. 45, Hennur Rd, Bangalore</p>
-      </div>
-    </div>
-
-    <form>
-      <div class="form-group">
-        <label>Full Name</label>
-        <input type="text" placeholder="e.g. Rahul Sharma" required>
-      </div>
-      <div class="form-group">
-        <label>Mobile Number</label>
-        <input type="tel" placeholder="+91 00000 00000" required>
-      </div>
-      <div class="form-group">
-        <label>Configuration Interested In</label>
-        <select>
-          <option>2 BHK Apartment</option>
-          <option>3 BHK Apartment</option>
-          <option>4 BHK Duplex Villa</option>
-        </select>
-      </div>
-      <button type="submit" class="btn-submit">Get All Details on WhatsApp</button>
-      <p style="font-size: 0.7rem; text-align: center; margin-top: 10px; opacity: 0.6;">*Your data is safe with us. No spam, only project updates.</p>
-    </form>
-  </section>
+  <!-- REAL MAP -->
+  <iframe src="https://maps.google.com/maps?q=Hennur,Bangalore&output=embed"
+  width="100%" height="250"></iframe>
 
 </div>
 
-<footer>
-  <p>&copy; 2026 Brick Residency | Golden Earth Avenue. <br>
-  Marketed by Brick Realty Pvt Ltd. All images are artist's impressions.</p>
-</footer>
+<!-- ENQUIRY -->
+<div class="enquiry-section">
+  <div>
+    <h2>Book Visit</h2>
+    <p>Call us now</p>
+  </div>
+
+  <!-- UPDATED FORM -->
+  <form onsubmit="sendWhatsApp(); return false;">
+    <input type="text" placeholder="Name" required>
+    <input type="tel" placeholder="Phone" required>
+
+    <select>
+      <option>2 BHK</option>
+      <option>3 BHK</option>
+      <option>4 BHK</option>
+    </select>
+
+    <button class="btn-submit">Submit</button>
+  </form>
+</div>
+
+</div>
+
+<footer>© Brick Residency</footer>
+
+<!-- FLOAT BUTTONS -->
+<a href="https://wa.me/919999999999"
+style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:10px;border-radius:50px;">WhatsApp</a>
+
+<a href="tel:9876543210"
+style="position:fixed;bottom:80px;right:20px;background:#2563eb;color:white;padding:10px;border-radius:50px;">Call</a>
+
+<!-- WHATSAPP SCRIPT -->
+<script>
+function sendWhatsApp(){
+  let name=document.querySelector('input[type="text"]').value;
+  let phone=document.querySelector('input[type="tel"]').value;
+  let config=document.querySelector('select').value;
+
+  let msg=`Name:${name}%0APhone:${phone}%0AConfig:${config}`;
+
+  window.open(`https://wa.me/919999999999?text=${msg}`);
+}
+</script>
 
 </body>
 </html>
