@@ -2,174 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Brick Residency | Official Site</title>
+  <title>Brick Residency | Luxury Living</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    /* RESET & CORE COLORS */
     * { box-sizing: border-box; }
     body { 
-      font-family: Arial, sans-serif; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
       margin: 0; 
-      background-color: #ffffff; /* Pure White Background */
-      color: #1a1a1a;           /* Dark Charcoal Text */
+      background-color: #ffffff; 
+      color: #1a1a1a; 
       line-height: 1.6;
     }
 
-    /* HEADER */
     header {
-      background: #1e3a8a; /* Solid Royal Blue */
+      background: #1e3a8a;
       color: white;
-      padding: 20px 5%;
+      padding: 15px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    .container { width: 90%; max-width: 1100px; margin: auto; padding: 40px 0; }
+    .container { width: 92%; max-width: 1200px; margin: auto; padding: 20px 0; }
 
     /* HERO */
     .hero {
-      background: #f1f5f9;
-      padding: 60px 20px;
+      background: #f8fafc;
+      padding: 40px;
       text-align: center;
+      border: 1px solid #e2e8f0;
       border-radius: 15px;
-      border: 2px solid #e2e8f0;
       margin-bottom: 40px;
     }
 
-    /* CARDS & SECTIONS */
-    .section-box {
-      border: 1px solid #cbd5e1;
-      padding: 30px;
-      border-radius: 12px;
-      margin-bottom: 30px;
-      background: #ffffff;
-    }
-
-    h2 { color: #1e3a8a; border-bottom: 3px solid #2563eb; display: inline-block; padding-bottom: 5px; }
-
-    /* AMENITIES GRID */
-    .grid {
+    /* PROPERTY CARDS */
+    .property-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
     }
 
-    .amenity-card {
-      text-align: center;
-      padding: 20px;
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
+    .property-card {
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      overflow: hidden;
+      background: white;
+      transition: transform 0.3s;
     }
 
-    .amenity-card i { font-size: 2rem; color: #2563eb; margin-bottom: 10px; }
+    .property-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
 
-    /* FINANCE BOX */
-    .finance-area {
-      background: #0f172a;
-      color: white;
-      padding: 30px;
-      border-radius: 15px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .emi-display {
-      background: rgba(255,255,255,0.1);
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      min-width: 250px;
-    }
-
-    /* FORM STYLES */
-    .form-input {
+    .property-img {
       width: 100%;
-      padding: 12px;
-      margin-top: 8px;
-      margin-bottom: 15px;
-      border: 1px solid #94a3b8;
-      border-radius: 6px;
+      height: 220px;
+      object-fit: cover;
     }
 
-    .btn {
-      background: #2563eb;
-      color: white;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      width: 100%;
+    .property-details { padding: 20px; }
+    .price-tag { color: #2563eb; font-size: 1.4rem; font-weight: bold; display: block; margin: 10px 0; }
+
+    /* SECTION TITLES */
+    h2 { color: #1e3a8a; border-left: 5px solid #2563eb; padding-left: 15px; margin-bottom: 30px; }
+
+    /* AMENITIES */
+    .amenity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-bottom: 40px;
     }
 
-    footer { text-align: center; padding: 40px; background: #f1f5f9; margin-top: 40px; }
-  </style>
-</head>
-<body>
-
-<header>
-  <div style="font-size: 1.5rem; font-weight: bold;">BRICK RESIDENCY</div>
-  <div style="background: white; color: #16a34a; padding: 5px 10px; border-radius: 5px; font-weight: bold; font-size: 0.8rem;">
-    GOVT APPROVED RERA
-  </div>
-</header>
-
-<div class="container">
-
-  <div class="hero">
-    <h1 style="margin:0;">Golden Earth Avenue</h1>
-    <p>Premium Luxury Living in the Heart of North Bangalore</p>
-    <p><strong>Call Us: +91 98765 43210</strong></p>
-  </div>
-
-  <div class="section-box">
-    <h2>Project Amenities</h2>
-    <div class="grid">
-      <div class="amenity-card"><i class="fas fa-swimmer"></i><br><strong>Swimming Pool</strong></div>
-      <div class="amenity-card"><i class="fas fa-dumbbell"></i><br><strong>Modern Gym</strong></div>
-      <div class="amenity-card"><i class="fas fa-shield-alt"></i><br><strong>24/7 Security</strong></div>
-      <div class="amenity-card"><i class="fas fa-tree"></i><br><strong>Park Area</strong></div>
-    </div>
-  </div>
-
-  <div class="section-box">
-    <h2>Location Advantage</h2>
-    <div class="grid">
-      <div><strong>Manyata Tech Park</strong><br>10 Mins Drive</div>
-      <div><strong>Airport (KIAL)</strong><br>25 Mins Drive</div>
-      <div><strong>Columbia Asia</strong><br>15 Mins Drive</div>
-      <div><strong>DPS School</strong><br>05 Mins Drive</div>
-    </div>
-  </div>
-
-  <div class="section-box">
-    <h2>EMI Calculator & Bank Partners</h2>
-    <div class="finance-area">
-      <div style="flex: 1;">
-        <label>Property Price (₹)</label>
-        <input type="number" id="p_price" value="6500000" oninput="calc()" class="form-input">
-        <label>Tenure (Years)</label>
-        <input type="number" id="p_time" value="20" oninput="calc()" class="form-input">
-      </div>
-      <div class="emi-display">
-        <p style="margin:0;">Your Monthly EMI</p>
-        <h3 id="emi_val" style="font-size: 2.5rem; color: #60a5fa; margin: 10px 0;">₹56,439</h3>
-        <p style="font-size: 0.8rem;">Pre-Approved by SBI, HDFC & Axis</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-box" id="enquiry">
-    <h2>Book a Site Visit</h2>
-    <form style="max-width: 500px; margin-top: 20px;">
-      <label>Full Name</label>
-      <input type="
+    .amenity-item {
+      background: #f1f5f9;
+      padding: 15px;
