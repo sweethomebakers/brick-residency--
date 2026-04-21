@@ -1,218 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Brick Residency | Golden Earth Avenue</title>
+  <meta charset="UTF-8">
+  <title>Brick Residency | Government Approved Luxury</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
+    :root {
+      --emerald: #10b981;
+      --midnight: #020617;
+      --slate-800: #1e293b;
+      --text-gray: #94a3b8;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       margin: 0;
-      background: #0f0f0f;
-      color: #f5f5f5;
+      background: var(--midnight);
+      color: #f8fafc;
+      line-height: 1.6;
     }
 
     header {
-      background: #111;
-      padding: 20px 40px;
-      font-size: 24px;
+      background: rgba(2, 6, 23, 0.9);
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--slate-800);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    .rera-badge {
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--emerald);
+      border: 1px solid var(--emerald);
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 12px;
       font-weight: bold;
-      border-bottom: 1px solid #d4af37;
+      letter-spacing: 1px;
     }
 
     .container {
-      padding: 40px;
-      max-width: 1200px;
+      padding: 20px 5%;
+      max-width: 1100px;
       margin: auto;
     }
 
     .section {
-      margin-top: 50px;
-      background: #1a1a1a;
-      padding: 25px;
-      border-radius: 12px;
+      margin-top: 60px;
+      padding: 40px;
+      background: var(--slate-800);
+      border-radius: 20px;
     }
 
-    h2 {
-      color: #d4af37;
-    }
+    h1, h2 { font-family: 'Playfair Display', serif; color: white; }
+    h2 { border-left: 4px solid var(--emerald); padding-left: 15px; margin-bottom: 30px; }
 
     /* HERO */
     .hero {
-      background: url('https://via.placeholder.com/1200x400') center/cover;
-      padding: 80px 20px;
-      border-radius: 12px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      color: white;
-    }
-
-    .call-btn { background: #d4af37; color: black; }
-    .whatsapp-btn { background: #25D366; }
-
-    /* GRID */
-    .grid {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    /* CARD */
-    .card {
-      background: #111;
-      border-radius: 15px;
-      overflow: hidden;
-      width: 300px;
-      border: 1px solid #d4af37;
-    }
-
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 15px;
-    }
-
-    .price {
-      color: #d4af37;
-      font-weight: bold;
-    }
-
-    /* NEARBY */
-    .nearby-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
-      gap: 15px;
-    }
-
-    .nearby-box {
-      background: #111;
-      padding: 15px;
-      border-radius: 10px;
-      border: 1px solid #333;
-    }
-
-    /* WHATSAPP FLOAT */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      padding: 12px 18px;
-      border-radius: 50px;
-      text-decoration: none;
-      color: white;
-    }
-  </style>
-</head>
-
-<body>
-
-<header>Brick Residency</header>
-
-<div class="container">
-
-  <!-- HERO -->
-  <div class="hero">
-    <h1>Luxury Living in Hennur</h1>
-    <p>Golden Earth Avenue - Premium Apartments & Villas</p>
-
-    <a href="tel:9999999999" class="btn call-btn">Call Now</a>
-    <a href="https://wa.me/919999999999" class="btn whatsapp-btn">WhatsApp</a>
-  </div>
-
-  <!-- PROPERTIES -->
-  <div class="section">
-    <h2>Available Units</h2>
-
-    <div class="grid">
-
-      <div class="card">
-        <img src="https://via.placeholder.com/400x200">
-        <div class="card-content">
-          <h3>2BHK Apartment</h3>
-          <p class="price">₹65 Lakhs</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://via.placeholder.com/400x200">
-        <div class="card-content">
-          <h3>3BHK Apartment</h3>
-          <p class="price">₹85 Lakhs</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://via.placeholder.com/400x200">
-        <div class="card-content">
-          <h3>4BHK Duplex Villa</h3>
-          <p class="price">₹1.5 Cr</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ABOUT -->
-  <div class="section">
-    <h2>About Golden Earth Avenue</h2>
-    <p>
-      A premium residential project in Hennur offering modern homes with luxury amenities,
-      excellent connectivity, and peaceful surroundings.
-    </p>
-  </div>
-
-  <!-- AMENITIES -->
-  <div class="section">
-    <h2>Amenities</h2>
-    <ul>
-      <li>Gym</li>
-      <li>Club House</li>
-      <li>Park</li>
-      <li>Swimming Pool</li>
-      <li>Grocery Store</li>
-      <li>Cafeteria</li>
-      <li>24/7 Security</li>
-      <li>CCTV Monitoring</li>
-      <li>Parking</li>
-    </ul>
-  </div>
-
-  <!-- NEARBY -->
-  <div class="section">
-    <h2>Nearby Locations</h2>
-
-    <div class="nearby-grid">
-      <div class="nearby-box">🏫 Schools & Colleges</div>
-      <div class="nearby-box">🏥 Hospitals</div>
-      <div class="nearby-box">🛒 Markets</div>
-      <div class="nearby-box">✈️ Airport</div>
-      <div class="nearby-box">🏢 IT Parks</div>
-      <div class="nearby-box">🛣️ Main Roads</div>
-    </div>
-  </div>
-
-  <!-- CONTACT -->
-  <div class="section">
-    <h2>Contact Us</h2>
-    <p>📞 9999999999</p>
-    <p>📍 Hennur, Bangalore</p>
-    <p>📧 info@brickresidency.com</p>
-  </div>
-
-</div>
-
-<a href="https://wa.me/919999999999" class="whatsapp-float">Chat</a>
-
-</body>
-</html>
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(rgba(2, 6, 23, 0.7), rgba(2, 6, 23, 0.7)), url
