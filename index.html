@@ -6,45 +6,138 @@
 
   <style>
     body {
-      font-family: Arial;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background: #f5f5f5;
+      background: #f8f9fb;
+      color: #333;
     }
 
     header {
       background: white;
-      padding: 20px;
-      text-align: center;
+      padding: 20px 40px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       font-size: 24px;
       font-weight: bold;
     }
 
     .container {
-      padding: 20px;
-      max-width: 1000px;
+      padding: 40px;
+      max-width: 1200px;
       margin: auto;
     }
 
-    .card {
+    .section {
+      margin-top: 50px;
       background: white;
-      padding: 15px;
-      border-radius: 10px;
-      margin-bottom: 20px;
+      padding: 25px;
+      border-radius: 12px;
     }
 
-    .price {
-      color: green;
-      font-weight: bold;
+    /* HERO */
+    .hero {
+      background: url('https://via.placeholder.com/1200x400') center/cover;
+      padding: 80px 20px;
+      color: white;
+      border-radius: 12px;
     }
 
     .btn {
       display: inline-block;
       margin-top: 10px;
-      padding: 8px 12px;
-      background: black;
-      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
       text-decoration: none;
-      border-radius: 5px;
+      color: white;
+    }
+
+    .call-btn { background: #007bff; }
+    .whatsapp-btn { background: #25D366; }
+
+    /* CARD */
+    .card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      max-width: 400px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .price {
+      color: #28a745;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    /* GRID */
+    .grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* GALLERY */
+    .slider {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slides {
+      display: flex;
+      transition: 0.5s;
+    }
+
+    .slides img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    /* CHOOSE US */
+    .choose-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 20px;
+      text-align: center;
+    }
+
+    .choose-box {
+      background: #f1f1f1;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    /* FLOAT WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 50px;
+      text-decoration: none;
     }
   </style>
 </head>
@@ -55,33 +148,130 @@
 
 <div class="container">
 
-  <h2>Golden Earth Avenue</h2>
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Find Your Dream Home in Hennur</h1>
+    <p>Golden Earth Avenue - Premium Living</p>
 
-  <div class="card">
-    <h3>2BHK Apartment</h3>
-    <p>Location: Hennur, Bangalore</p>
-    <p class="price">₹65 Lakhs</p>
-
-    <a href="tel:9999999999" class="btn">Call Now</a>
-    <a href="https://wa.me/919999999999" class="btn">WhatsApp</a>
+    <a href="tel:9999999999" class="btn call-btn">Call Now</a>
+    <a href="https://wa.me/919999999999" class="btn whatsapp-btn">WhatsApp</a>
   </div>
 
-  <div class="card">
-    <h3>Amenities</h3>
+  <!-- PROPERTY -->
+  <div class="section">
+    <h2>Featured Project</h2>
+
+    <div class="grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/800x400">
+        <div class="card-content">
+          <h3>Golden Earth Avenue</h3>
+          <p>2BHK / 3BHK Apartments | Hennur</p>
+          <p class="price">₹65 Lakhs onwards</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="section">
+    <h2>About Golden Earth Avenue</h2>
+    <p>
+      Golden Earth Avenue is a premium residential project located in Hennur,
+      offering modern homes with top-class amenities and excellent connectivity.
+    </p>
+  </div>
+
+  <!-- HIGHLIGHTS -->
+  <div class="section">
+    <h2>Project Highlights</h2>
+    <ul>
+      <li>Prime Location - Hennur Main Road</li>
+      <li>Near IT hubs & schools</li>
+      <li>Excellent connectivity</li>
+    </ul>
+  </div>
+
+  <!-- AMENITIES -->
+  <div class="section">
+    <h2>Amenities</h2>
     <ul>
       <li>Gym</li>
       <li>Club House</li>
       <li>Park</li>
-      <li>Terrace Pool</li>
+      <li>Swimming Pool</li>
       <li>Grocery Shop</li>
       <li>Cafeteria</li>
       <li>24/7 Security</li>
       <li>CCTV Monitoring</li>
-      <li>Car Parking</li>
+      <li>Ample Parking</li>
     </ul>
   </div>
 
+  <!-- GALLERY -->
+  <div class="section">
+    <h2>Gallery</h2>
+
+    <div class="slider">
+      <div class="slides" id="slides">
+        <img src="https://via.placeholder.com/1200x400">
+        <img src="https://via.placeholder.com/1200x400/cccccc">
+        <img src="https://via.placeholder.com/1200x400/999999">
+      </div>
+
+      <span class="prev" onclick="moveSlide(-1)">❮</span>
+      <span class="next" onclick="moveSlide(1)">❯</span>
+    </div>
+  </div>
+
+  <!-- CHOOSE US -->
+  <div class="section">
+    <h2>Why Choose Us</h2>
+    <div class="choose-grid">
+      <div class="choose-box">100+ Happy Clients</div>
+      <div class="choose-box">Verified Properties</div>
+      <div class="choose-box">Local Experts</div>
+      <div class="choose-box">Free Site Visits</div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="section">
+    <h2>Testimonials</h2>
+    <p>⭐⭐⭐⭐⭐ "Great service and genuine properties."</p>
+    <p>⭐⭐⭐⭐⭐ "Helped me find perfect home."</p>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="section">
+    <h2>Contact Us</h2>
+    <p>Phone: 9999999999</p>
+    <p>Location: Hennur, Bangalore</p>
+    <p>Email: info@brickresidency.com</p>
+  </div>
+
+  <!-- MAP -->
+  <div class="section">
+    <h2>Location</h2>
+    <iframe src="https://maps.google.com/maps?q=Hennur,Bangalore&output=embed"
+      width="100%" height="300"></iframe>
+  </div>
+
 </div>
+
+<a href="https://wa.me/919999999999" class="whatsapp-float">Chat</a>
+
+<script>
+let index = 0;
+
+function moveSlide(step) {
+  let slides = document.getElementById("slides");
+  let total = slides.children.length;
+
+  index = (index + step + total) % total;
+  slides.style.transform = "translateX(-" + (index * 100) + "%)";
+}
+</script>
 
 </body>
 </html>
