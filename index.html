@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Brick Residency | Premium RERA Approved Project</title>
+  <title>Brick Residency | Premium North Bangalore Living</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -13,15 +13,16 @@
       --primary: #0f172a;
       --secondary: #2563eb;
       --success: #16a34a;
-      --bg-body: #f1f5f9;
+      --bg-body: #f8fafc;
       --white: #ffffff;
+      --text-main: #334155;
     }
 
     body {
       font-family: 'Outfit', sans-serif;
       margin: 0;
       background-color: var(--bg-body);
-      color: var(--primary);
+      color: var(--text-main);
       scroll-behavior: smooth;
     }
 
@@ -31,13 +32,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
-    .brand { font-size: 1.5rem; font-weight: 700; }
+    .brand { font-size: 1.5rem; font-weight: 700; color: var(--primary); text-decoration: none; }
     .brand span { color: var(--secondary); }
 
     .rera-tag {
@@ -47,14 +48,16 @@
       border-radius: 50px;
       font-size: 0.8rem;
       font-weight: 700;
+      border: 1px solid #bbf7d0;
     }
 
     .container { max-width: 1200px; margin: auto; padding: 0 20px; }
 
+    /* HERO SECTION */
     .hero {
-      background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
-      url('https://images.unsplash.com/photo-1582407947304-fd86f028f716') center/cover;
-      height: 70vh;
+      background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
+                  url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&w=1200&q=80') center/cover;
+      height: 60vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -62,175 +65,227 @@
       color: var(--white);
       text-align: center;
       border-radius: 0 0 40px 40px;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
+    }
+
+    /* ABOUT SECTION */
+    .about-card {
+      background: var(--white);
+      padding: 40px;
+      border-radius: 20px;
+      margin-bottom: 50px;
+      border-left: 8px solid var(--secondary);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
 
     .section-title { text-align: center; margin-bottom: 40px; }
-    .section-title h2 { font-size: 2.2rem; }
+    .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--primary); }
 
-    .amenities-grid {
+    /* CONFIGURATION CARDS */
+    .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
       margin-bottom: 60px;
     }
 
-    .amenity-card {
+    .price-card {
       background: var(--white);
-      padding: 30px;
       border-radius: 20px;
-      text-align: center;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+      border: 1px solid #e2e8f0;
     }
+    .price-card:hover { transform: translateY(-10px); }
+    .price-card img { width: 100%; height: 200px; object-fit: cover; }
+    .price-info { padding: 25px; text-align: center; }
+    .price-info h3 { margin: 0; font-size: 1.5rem; color: var(--primary); }
+    .price-info .amount { font-size: 1.8rem; color: var(--secondary); font-weight: 800; margin: 10px 0; display: block; }
 
+    /* AMENITIES */
+    .amenity-row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+    .amenity-tag {
+      background: var(--white);
+      padding: 15px 25px;
+      border-radius: 15px;
+      font-weight: 600;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .amenity-tag i { color: var(--secondary); }
+
+    /* LOCATION & MAP */
     .location-wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 30px;
       background: var(--white);
-      padding: 40px;
+      padding: 30px;
       border-radius: 30px;
       margin-bottom: 60px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
+    .loc-list div { padding: 12px 0; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; }
 
-    .location-item {
-      display: flex;
-      gap: 20px;
-      padding: 10px 0;
-    }
-
+    /* ENQUIRY */
     .enquiry-section {
       background: var(--primary);
       color: white;
-      padding: 60px;
+      padding: 50px;
       border-radius: 30px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 50px;
-      margin-bottom: 60px;
+      margin-bottom: 80px;
     }
-
-    input, select {
-      padding: 12px;
-      border-radius: 8px;
+    .enquiry-section input, .enquiry-section select {
+      width: 100%;
+      padding: 15px;
+      border-radius: 10px;
       border: none;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      font-size: 1rem;
     }
-
     .btn-submit {
       background: var(--secondary);
       color: white;
-      padding: 15px;
+      padding: 18px;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
+      font-weight: 700;
+      cursor: pointer;
       width: 100%;
+      font-size: 1.1rem;
     }
 
-    footer { text-align: center; padding: 40px; }
+    /* FLOAT BUTTONS */
+    .float-call { position: fixed; bottom: 90px; right: 20px; background: var(--secondary); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1001; text-decoration: none; }
+    .float-wa { position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); z-index: 1001; text-decoration: none; }
 
     @media (max-width: 900px) {
       .location-wrapper, .enquiry-section { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.5rem; }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="brand">BRICK <span>RESIDENCY</span></div>
-  <div class="rera-tag">RERA Approved</div>
+  <a href="#" class="brand">BRICK <span>RESIDENCY</span></a>
+  <div class="rera-tag"><i class="fas fa-check-circle"></i> RERA Approved</div>
 </header>
 
 <div class="container">
 
-<!-- HERO -->
-<section class="hero">
-  <h1>Luxury Redefined</h1>
-  <p>Golden Earth Avenue</p>
+  <section class="hero">
+    <h1 style="font-family: 'Playfair Display'; font-size: 3.5rem; margin: 0;">Golden Earth Avenue</h1>
+    <p style="font-size: 1.2rem; margin-top: 10px;">Luxury Redefined in the Heart of North Bangalore</p>
+    <div style="background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 10px; margin-top: 20px; border: 1px solid rgba(255,255,255,0.3);">
+      <span style="color:#facc15; font-weight:bold;">★ Limited Units Available | Pre-Launch Offer</span>
+    </div>
+  </section>
 
-  <!-- ADDED URGENCY -->
-  <p style="color:#facc15; font-weight:bold;">
-    Limited Units Available | Pre-Launch Offer
-  </p>
-</section>
+  <section class="about-card">
+    <h2 style="margin-top: 0; color: var(--primary);">About the Project</h2>
+    <p>Brick Residency is an ultra-modern residential landmark by <strong>Golden Earth Avenue</strong>. Spread across lush acres on Hennur Main Road, this project offers a perfect blend of high-tech lifestyle and natural serenity. With 100% Vastu-compliant designs and premium specifications, we ensure your home is a sanctuary of peace and luxury.</p>
+  </section>
 
-<!-- ADDED PRICING -->
-<div class="section-title"><h2>Pricing & Configurations</h2></div>
-
-<div class="amenities-grid">
-  <div class="amenity-card"><h3>2 BHK</h3><p>₹65 Lakhs</p></div>
-  <div class="amenity-card"><h3>3 BHK</h3><p>₹85 Lakhs</p></div>
-  <div class="amenity-card"><h3>4 BHK Duplex</h3><p>₹1.5 Cr</p></div>
-</div>
-
-<!-- EXISTING AMENITIES -->
-<div class="section-title"><h2>Amenities</h2></div>
-
-<div class="amenities-grid">
-  <div class="amenity-card">Gym</div>
-  <div class="amenity-card">Pool</div>
-  <div class="amenity-card">Security</div>
-</div>
-
-<!-- LOCATION -->
-<div class="location-wrapper">
-  <div>
-
-    <div class="location-item">Airport - 25 mins</div>
-    <div class="location-item">Hospital - 10 mins</div>
-    <div class="location-item">School - 5 mins</div>
-
-    <!-- ADDED NEARBY -->
-    <div class="location-item">Market - 3 mins</div>
-    <div class="location-item">College - 10 mins</div>
-
+  <div class="section-title"><h2>Home Configurations</h2></div>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=400&q=80" alt="2BHK">
+      <div class="price-info">
+        <h3>Premium 2 BHK</h3>
+        <span class="amount">₹65 Lakhs*</span>
+        <p>1250 Sq.Ft | 2 Balconies</p>
+      </div>
+    </div>
+    <div class="price-card">
+      <img src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=400&q=80" alt="3BHK">
+      <div class="price-info">
+        <h3>Luxury 3 BHK</h3>
+        <span class="amount">₹85 Lakhs*</span>
+        <p>1680 Sq.Ft | Corner Unit</p>
+      </div>
+    </div>
+    <div class="price-card">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80" alt="Duplex">
+      <div class="price-info">
+        <h3>4 BHK Duplex</h3>
+        <span class="amount">₹1.5 Cr*</span>
+        <p>2450 Sq.Ft | Private Garden</p>
+      </div>
+    </div>
   </div>
 
-  <!-- REAL MAP -->
-  <iframe src="https://maps.google.com/maps?q=Hennur,Bangalore&output=embed"
-  width="100%" height="250"></iframe>
-
-</div>
-
-<!-- ENQUIRY -->
-<div class="enquiry-section">
-  <div>
-    <h2>Book Visit</h2>
-    <p>Call us now</p>
+  <div class="section-title"><h2>Elite Amenities</h2></div>
+  <div class="amenity-row">
+    <div class="amenity-tag"><i class="fas fa-dumbbell"></i> Smart Gym</div>
+    <div class="amenity-tag"><i class="fas fa-swimmer"></i> Infinity Pool</div>
+    <div class="amenity-tag"><i class="fas fa-shield-alt"></i> 3-Tier Security</div>
+    <div class="amenity-tag"><i class="fas fa-leaf"></i> Zen Garden</div>
+    <div class="amenity-tag"><i class="fas fa-child"></i> Kids Play Zone</div>
   </div>
 
-  <!-- UPDATED FORM -->
-  <form onsubmit="sendWhatsApp(); return false;">
-    <input type="text" placeholder="Name" required>
-    <input type="tel" placeholder="Phone" required>
+  <div class="section-title"><h2>Location Advantages</h2></div>
+  <div class="location-wrapper">
+    <div class="loc-list">
+      <div><span><i class="fas fa-plane"></i> Int. Airport</span> <strong>25 Mins</strong></div>
+      <div><span><i class="fas fa-hospital"></i> Manipal Hospital</span> <strong>10 Mins</strong></div>
+      <div><span><i class="fas fa-school"></i> DPS School</span> <strong>05 Mins</strong></div>
+      <div><span><i class="fas fa-shopping-cart"></i> Elements Mall</span> <strong>08 Mins</strong></div>
+      <div><span><i class="fas fa-university"></i> Manyata Tech Park</span> <strong>12 Mins</strong></div>
+    </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124397.4390543666!2d77.5457595286591!3d13.008882570086381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1713425000000!5m2!1sen!2sin" 
+    width="100%" height="300" style="border:0; border-radius: 20px;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
 
-    <select>
-      <option>2 BHK</option>
-      <option>3 BHK</option>
-      <option>4 BHK</option>
-    </select>
+  <div class="enquiry-section" id="enquiry">
+    <div>
+      <h2 style="margin-top: 0;">Schedule a Site Visit</h2>
+      <p>Fill out the form to receive a detailed brochure and a personalized site tour by our relationship manager.</p>
+      <div style="margin-top: 30px;">
+        <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+        <p><i class="fas fa-envelope"></i> sales@brickresidency.com</p>
+      </div>
+    </div>
+    <form onsubmit="sendWhatsApp(); return false;">
+      <input type="text" id="uname" placeholder="Full Name" required>
+      <input type="tel" id="uphone" placeholder="Mobile Number" required>
+      <select id="uconfig">
+        <option>Interested in 2 BHK</option>
+        <option>Interested in 3 BHK</option>
+        <option>Interested in 4 BHK Duplex</option>
+      </select>
+      <button class="btn-submit">Request Call Back</button>
+    </form>
+  </div>
 
-    <button class="btn-submit">Submit</button>
-  </form>
 </div>
 
-</div>
+<footer style="background: var(--white); margin-top: 50px;">
+  <p style="margin: 0; color: #94a3b8;">&copy; 2026 Brick Residency | Golden Earth Avenue. All Rights Reserved.</p>
+</footer>
 
-<footer>© Brick Residency</footer>
+<a href="tel:9876543210" class="float-call"><i class="fas fa-phone"></i></a>
+<a href="https://wa.me/919999999999" class="float-wa"><i class="fab fa-whatsapp"></i></a>
 
-<!-- FLOAT BUTTONS -->
-<a href="https://wa.me/919999999999"
-style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:10px;border-radius:50px;">WhatsApp</a>
-
-<a href="tel:9876543210"
-style="position:fixed;bottom:80px;right:20px;background:#2563eb;color:white;padding:10px;border-radius:50px;">Call</a>
-
-<!-- WHATSAPP SCRIPT -->
 <script>
 function sendWhatsApp(){
-  let name=document.querySelector('input[type="text"]').value;
-  let phone=document.querySelector('input[type="tel"]').value;
-  let config=document.querySelector('select').value;
+  let name = document.getElementById('uname').value;
+  let phone = document.getElementById('uphone').value;
+  let config = document.getElementById('uconfig').value;
 
-  let msg=`Name:${name}%0APhone:${phone}%0AConfig:${config}`;
+  let msg = `Hi Brick Residency,%0A%0AI am interested in a site visit.%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Requirement:* ${config}`;
 
   window.open(`https://wa.me/919999999999?text=${msg}`);
 }
