@@ -3,158 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brick Residency | North Bangalore Living</title>
+    <title>Brick Residency | Premium North Bangalore Living</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* 1. RESET & PERFORMANCE BASE */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        :root {
-            --primary: #0f172a;
-            --accent: #2563eb;
-            --success: #166534;
-            --bg-body: #f8fafc;
-            --text-main: #334155;
-        }
-
+        /* 1. CORE STYLES */
+        * { box-sizing: border-box; }
         body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-body); 
-            color: var(--text-main); 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            background-color: #f4f7f6; 
+            color: #2c3e50; 
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
         /* 2. HEADER */
         header {
-            background-color: var(--primary);
+            background-color: #0f172a; 
             color: white;
             padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 3px solid #2563eb;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .logo-text { font-size: 1.2rem; font-weight: 800; letter-spacing: 1px; }
-        .rera-badge { background: var(--success); padding: 4px 12px; border-radius: 4px; font-size: 0.7rem; font-weight: bold; }
+        .container { max-width: 1100px; margin: auto; padding: 20px; }
 
-        .container { max-width: 1100px; margin: 20px auto; padding: 0 20px; }
-
-        /* 3. PROJECT DESCRIPTION (Simplified & Clean) */
-        .intro-box {
+        /* 3. SECTIONS */
+        .section-white {
             background: white;
             padding: 40px;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            text-align: center;
-            border: 1px solid #e2e8f0;
-        }
-        
-        .intro-box h2 { color: var(--primary); margin-bottom: 15px; font-size: 2rem; }
-        .intro-box p { font-size: 1.1rem; color: #64748b; max-width: 800px; margin: auto; }
-
-        /* 4. AMENITIES (The "Look Good" Grid) */
-        .amenity-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-
-        .amenity-card {
-            background: white;
-            padding: 25px 15px;
             border-radius: 10px;
-            text-align: center;
-            transition: 0.3s ease;
-            border: 1px solid #e2e8f0;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        .amenity-card:hover { transform: translateY(-5px); border-color: var(--accent); }
-        .amenity-card i { font-size: 1.8rem; color: var(--accent); margin-bottom: 12px; display: block; }
-        .amenity-card span { font-weight: 700; font-size: 0.85rem; color: var(--primary); }
+        h2 { color: #0f172a; border-left: 5px solid #2563eb; padding-left: 15px; margin-bottom: 25px; font-weight: 700; }
 
-        /* 5. CONFIGURATION CARDS */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; transition: 0.3s; }
-        .card:hover { box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-        
-        /* Fixed Background color for images so they don't look blank while loading */
-        .card-img { width: 100%; height: 230px; object-fit: cover; background-color: #cbd5e1; display: block; }
-        
-        .card-body { padding: 25px; text-align: center; }
-        .card-body h3 { margin-bottom: 10px; font-size: 1.3rem; }
-        .price-tag { color: var(--accent); font-size: 1.5rem; font-weight: 800; margin-bottom: 5px; }
+        /* 4. CONFIGURATIONS */
+        .config-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .config-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .config-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .config-img { width: 100%; height: 230px; object-fit: cover; background: #eee; }
+        .config-body { padding: 20px; text-align: center; }
+        .price { font-size: 1.5rem; color: #2563eb; font-weight: bold; margin: 10px 0; }
 
-        /* 6. FORM SECTION */
-        .form-section {
-            background: var(--primary);
+        /* 5. ICON GRIDS */
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        .icon-box { background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; }
+        .icon-box i { font-size: 2rem; color: #2563eb; margin-bottom: 10px; }
+        .status-tag { color: #22c55e; font-weight: bold; font-size: 0.8rem; }
+
+        /* 6. LOCATION & SPECS */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .details-cat { background: #f8fafc; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0; }
+        .details-cat h4 { margin-top: 0; color: #2563eb; border-bottom: 1px solid #cbd5e1; padding-bottom: 10px; }
+        .list-item { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 8px; }
+        .list-item span:last-child { font-weight: bold; }
+
+        /* 7. TESTIMONIALS */
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .testi-card { background: #f8fafc; padding: 20px; border-radius: 8px; border-bottom: 3px solid #2563eb; }
+        .stars { color: #f59e0b; font-size: 0.8rem; margin-bottom: 10px; }
+
+        /* 8. ENQUIRY FORM */
+        .enquiry-form {
+            background: #0f172a;
             color: white;
             padding: 40px;
-            border-radius: 12px;
-            margin-top: 50px;
-            text-align: center;
+            border-radius: 10px;
         }
-
-        .form-input {
-            width: 100%; max-width: 400px; padding: 12px; margin: 10px 0; border-radius: 6px; border: none; font-size: 1rem;
-        }
-
-        .btn-submit {
-            background: var(--accent);
-            color: white;
-            padding: 14px 40px;
-            border: none;
-            border-radius: 6px;
-            font-weight: 700;
-            cursor: pointer;
+        .input-field {
             width: 100%;
-            max-width: 400px;
+            padding: 12px;
             margin-top: 10px;
-            font-size: 1rem;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #334155;
+            background: #1e293b;
+            color: white;
+        }
+        .btn-call {
+            background: #2563eb;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.1rem;
         }
 
-        /* 7. FLOATING CONTACTS */
-        .float-btn {
-            position: fixed; right: 20px; width: 55px; height: 55px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center; color: white;
-            text-decoration: none; font-size: 24px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 2000;
+        /* 9. FLOAT BUTTONS */
+        .float-contact {
+            position: fixed;
+            right: 20px;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            font-size: 22px;
         }
-        .wa { bottom: 20px; background: #22c55e; }
-        .ph { bottom: 85px; background: var(--accent); }
+        .wa-float { bottom: 20px; background-color: #25D366; }
+        .phone-float { bottom: 85px; background-color: #2563eb; }
 
-        footer { text-align: center; padding: 40px; color: #94a3b8; font-size: 0.85rem; }
+        footer { text-align: center; padding: 40px; color: #7f8c8d; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo-text">BRICK RESIDENCY</div>
-    <div class="rera-badge">RERA APPROVED</div>
+    <div style="font-size: 1.5rem; font-weight: bold;">BRICK RESIDENCY</div>
+    <div style="background: #27ae60; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">RERA: PRM/KA/1251/446</div>
 </header>
 
 <div class="container">
 
-    <div class="intro-box">
-        <h2>The Landmark of Hennur</h2>
-        <p>Brick Residency by <strong>Golden Earth Avenue</strong> is a curated collection of luxury homes. Designed with 70% open spaces and absolute Vastu compliance, we offer a tranquil retreat with seamless connectivity to Manyata Tech Park and North Bangalore's prime hubs.</p>
-    </div>
-
-    <div class="amenity-grid">
-        <div class="amenity-card"><i class="fas fa-swimmer"></i><span>Infinity Pool</span></div>
-        <div class="amenity-card"><i class="fas fa-dumbbell"></i><span>Pro Gym</span></div>
-        <div class="amenity-card"><i class="fas fa-child"></i><span>Kids Play</span></div>
-        <div class="amenity-card"><i class="fas fa-leaf"></i><span>Zen Garden</span></div>
-        <div class="amenity-card"><i class="fas fa-shield-alt"></i><span>3-Tier Security</span></div>
-        <div class="amenity-card"><i class="fas fa-plug"></i><span>EV Charging</span></div>
-    </div>
-
-    <div class="grid">
-        <div class="card">
-            <img src="
+    <div class="section-white">
+        <h2>Premium Residential Landmarks</h2>
+        <p>Brick
